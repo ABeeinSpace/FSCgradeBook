@@ -21,7 +21,7 @@ public class FSCCourseRoster {
 	}
 
 	public int searchID() {
-
+		searchID();
 	}
 
 	private int searchID() {
