@@ -20,19 +20,42 @@ public class FSCCourseRoster {
 		return courseNumber;
 	}
 
-	public int searchID() {
-		searchID();
+	public boolean searchID(int searchTerm) {
+		return searchID(head, searchTerm);
 	}
 
-	private int searchID() {
-
+	private boolean searchID(Student p ,int searchTerm) {
+		Student hp = p;
+		/*We loop while hp.getNext() does NOT equal null because if we tried to execute line 42 against a null value
+		Java would get angry at us and we would crash and burn.*/
+		while (hp.getNext() != null) {
+			if (hp.getID() == searchTerm) {
+				/*We have to check the last name in case two students share a first name. */
+					return true;
+			}
+			hp = hp.getNext();
+		}
+		return false;
 	}
-	public int searchName() {
-
+	public boolean searchName(String firstName, String lastName) {
+		return searchName(head, firstName, lastName);
 	}
 
-	private int searchName() {
-
+	private boolean searchName(Student p, String firstName, String lastName) {
+		Student hp = p;
+		/*We loop while hp.getNext() does NOT equal null because if we tried to execute line 42 against a null value
+		Java would get angry at us and we would crash and burn.*/
+		while (hp.getNext() != null) {
+			if (hp.getFirstName() == firstName) {
+				/*We have to check the last name in case two students share a first name. */
+				if (hp.getLastName() == lastName) {
+					return true;
+				}
+				hp = hp.getNext();
+			}
+			hp = hp.getNext();
+		}
+		return false;
 	}
 
 	public int findNode() {
