@@ -61,7 +61,8 @@ public class Main {
 //                    displayStudents();
                     break;
                 /*This case is kinda special since we need to do our cleanup work here. If I'm going to just return
-                from main() here I'm going to exit directly after the return statement.*/
+                from main() here I'm going to exit directly after the return statement.
+                Note: The reason I don't use System.exit() here is because it's not convention */
                 case "QUIT":
                     in.close();
                     out.close();
