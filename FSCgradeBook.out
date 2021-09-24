@@ -1,0 +1,237 @@
+Running DISPLAYSTUDENTS...
+	ERROR: there are no students currently in the system.
+Running DISPLAYSTATS...
+Running SEARCHBYID...
+Running SEARCHBYNAME...
+Running ADDRECORD...
+   Kalyn Salido (ID# 111) has been added to CSC-2207.
+   Final Grade: 90.10 (A)
+Running ADDRECORD...
+   Kalyn Salido (ID# 111) has been added to CSC-3280.
+   Final Grade: 90.10 (A)
+Running SEARCHBYNAME...
+Running SEARCHBYID...
+Running DISPLAYSTATS...
+Running DISPLAYSTUDENTS...
+Course roster for CSC-3280
+	Kalyn Salido (ID # 111):
+		Exam 1:       90
+		Exam 2:       85
+		Final Exam:   94
+		Final Grade:  90.10
+		Letter Grade: A
+Running DISPLAYSTUDENTS...
+Course roster for CSC-2100
+
+Running ADDRECORD...
+   Samuel Rogers (ID# 871) has been added to CSC-2290.
+   Final Grade: 80.80 (B)
+Running ADDRECORD...
+   Wesley Herrick (ID# 253) has been added to CSC-2100.
+   Final Grade: 60.00 (D)
+Running DISPLAYSTATS...
+Running SEARCHBYID...
+Running SEARCHBYNAME...
+Running DISPLAYSTUDENTS...
+Course roster for CSC-2290
+	Samuel Rogers (ID # 871):
+		Exam 1:       90
+		Exam 2:       70
+		Final Exam:   82
+		Final Grade:  80.80
+		Letter Grade: B
+Course roster for CSC-3280
+	Kalyn Salido (ID # 111):
+		Exam 1:       90
+		Exam 2:       85
+		Final Exam:   94
+		Final Grade:  90.10
+		Letter Grade: A
+Course roster for CSC-2100
+	Wesley Herrick (ID # 253):
+		Exam 1:       40
+		Exam 2:       80
+		Final Exam:   60
+		Final Grade:  60.00
+		Letter Grade: D
+Running ADDRECORD...
+   Student PlaysALot (ID# 584) has been added to CSC-2290.
+   Final Grade: 26.20 (F)
+Running ADDRECORD...
+   Kalyn Salido (ID# 111) has been added to CSC-2100.
+   Final Grade: 87.10 (B)
+Running DISPLAYSTUDENTS...
+Course roster for CSC-2290
+	Samuel Rogers (ID # 871):
+		Exam 1:       90
+		Exam 2:       70
+		Final Exam:   82
+		Final Grade:  80.80
+		Letter Grade: B	Student PlaysALot (ID # 584):
+		Exam 1:       30
+		Exam 2:       20
+		Final Exam:   28
+		Final Grade:  26.20
+		Letter Grade: F
+Running DISPLAYSTATS...
+Running SEARCHBYID...
+Running ADDRECORD...
+   Stephan Bradford (ID# 289) has been added to CSC-3280.
+   Final Grade: 66.40 (D)
+Running ADDRECORD...
+   Al Jifri (ID# 124) has been added to CSC-3280.
+   Final Grade: 95.80 (A)
+Running ADDRECORD...
+   Student WhoWorksHard (ID# 777) has been added to CSC-3280.
+   Final Grade: 100.00 (A)
+Running DISPLAYSTUDENTS...
+Course roster for CSC-3280
+	Kalyn Salido (ID # 111):
+		Exam 1:       90
+		Exam 2:       85
+		Final Exam:   94
+		Final Grade:  90.10
+		Letter Grade: A	Al Jifri (ID # 124):
+		Exam 1:       96
+		Exam 2:       98
+		Final Exam:   94
+		Final Grade:  95.80
+		Letter Grade: A	Stephan Bradford (ID # 289):
+		Exam 1:       62
+		Exam 2:       58
+		Final Exam:   76
+		Final Grade:  66.40
+		Letter Grade: D	Student WhoWorksHard (ID # 777):
+		Exam 1:       100
+		Exam 2:       100
+		Final Exam:   100
+		Final Grade:  100.00
+		Letter Grade: A
+Running DISPLAYSTATS...
+Running SEARCHBYNAME...
+Running DISPLAYSTATS...
+Running DISPLAYSTUDENTS...
+Course roster for CSC-2290
+	Samuel Rogers (ID # 871):
+		Exam 1:       90
+		Exam 2:       70
+		Final Exam:   82
+		Final Grade:  80.80
+		Letter Grade: B	Student PlaysALot (ID # 584):
+		Exam 1:       30
+		Exam 2:       20
+		Final Exam:   28
+		Final Grade:  26.20
+		Letter Grade: F
+Course roster for CSC-3280
+	Kalyn Salido (ID # 111):
+		Exam 1:       90
+		Exam 2:       85
+		Final Exam:   94
+		Final Grade:  90.10
+		Letter Grade: A	Al Jifri (ID # 124):
+		Exam 1:       96
+		Exam 2:       98
+		Final Exam:   94
+		Final Grade:  95.80
+		Letter Grade: A	Stephan Bradford (ID # 289):
+		Exam 1:       62
+		Exam 2:       58
+		Final Exam:   76
+		Final Grade:  66.40
+		Letter Grade: D	Student WhoWorksHard (ID # 777):
+		Exam 1:       100
+		Exam 2:       100
+		Final Exam:   100
+		Final Grade:  100.00
+		Letter Grade: A
+Course roster for CSC-2100
+	Wesley Herrick (ID # 253):
+		Exam 1:       40
+		Exam 2:       80
+		Final Exam:   60
+		Final Grade:  60.00
+		Letter Grade: D	Kalyn Salido (ID # 111):
+		Exam 1:       87
+		Exam 2:       82
+		Final Exam:   91
+		Final Grade:  87.10
+		Letter Grade: B
+Running DELETERECORD...
+	Kalyn Salido (ID 111) has been deleted from CSC-3280
+	Kalyn Salido (ID 111) has been deleted from CSC-2100
+Running DISPLAYSTATS...
+Running DISPLAYSTUDENTS...
+Course roster for CSC-2290
+	Samuel Rogers (ID # 871):
+		Exam 1:       90
+		Exam 2:       70
+		Final Exam:   82
+		Final Grade:  80.80
+		Letter Grade: B	Student PlaysALot (ID # 584):
+		Exam 1:       30
+		Exam 2:       20
+		Final Exam:   28
+		Final Grade:  26.20
+		Letter Grade: F
+Course roster for CSC-3280
+	Al Jifri (ID # 124):
+		Exam 1:       96
+		Exam 2:       98
+		Final Exam:   94
+		Final Grade:  95.80
+		Letter Grade: A	Stephan Bradford (ID # 289):
+		Exam 1:       62
+		Exam 2:       58
+		Final Exam:   76
+		Final Grade:  66.40
+		Letter Grade: D	Student WhoWorksHard (ID # 777):
+		Exam 1:       100
+		Exam 2:       100
+		Final Exam:   100
+		Final Grade:  100.00
+		Letter Grade: A
+Course roster for CSC-2100
+	Wesley Herrick (ID # 253):
+		Exam 1:       40
+		Exam 2:       80
+		Final Exam:   60
+		Final Grade:  60.00
+		Letter Grade: D
+Running DELETERECORD...
+	Wesley Herrick (ID 253) has been deleted from CSC-2100
+Running SEARCHBYID...
+Running SEARCHBYID...
+Running DISPLAYSTATS...
+Running DISPLAYSTUDENTS...
+Course roster for CSC-2290
+	Samuel Rogers (ID # 871):
+		Exam 1:       90
+		Exam 2:       70
+		Final Exam:   82
+		Final Grade:  80.80
+		Letter Grade: B	Student PlaysALot (ID # 584):
+		Exam 1:       30
+		Exam 2:       20
+		Final Exam:   28
+		Final Grade:  26.20
+		Letter Grade: F
+Course roster for CSC-3280
+	Al Jifri (ID # 124):
+		Exam 1:       96
+		Exam 2:       98
+		Final Exam:   94
+		Final Grade:  95.80
+		Letter Grade: A	Stephan Bradford (ID # 289):
+		Exam 1:       62
+		Exam 2:       58
+		Final Exam:   76
+		Final Grade:  66.40
+		Letter Grade: D	Student WhoWorksHard (ID # 777):
+		Exam 1:       100
+		Exam 2:       100
+		Final Exam:   100
+		Final Grade:  100.00
+		Letter Grade: A
+Course roster for CSC-2100
+

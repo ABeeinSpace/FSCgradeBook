@@ -12,6 +12,7 @@ public class Student {
 	private static int numStudents;
 	private Student next;
 
+	//region Constructors
 	public Student(String courseNumber, int ID, String firstName, String lastName, int[] examGrades, double finalGrade, char letterGrade) {
 		this.courseNumber = courseNumber;
 		this.ID = ID;
@@ -21,12 +22,18 @@ public class Student {
 		this.finalGrade = finalGrade;
 		this.letterGrade = letterGrade;
 		numStudents++;
-		this.next = null;
 	}
 
+	/*Defined an empty constructor here, so we can create help pointers more easily.
+	* NOTE: We don't increment numStudents here because we aren't technically creating a student that should be
+	* recorded, we're just creating a pointer to a student. If we incremented, we're going to have a bad time later
+	* on.*/
 	public Student() {
 	}
+	//endregion
 
+
+	//region Getters and Setters
 	public String getCourseNumber() {
 		return courseNumber;
 	}
@@ -83,12 +90,7 @@ public class Student {
 		this.letterGrade = letterGrade;
 	}
 
-	public void decrementNumStudents() {
-		numStudents--;
-	}
-	public void incrementNumStudents() {
-		numStudents++;
-	}
+
 
 	public Student getNext() {
 		return next;
@@ -97,4 +99,31 @@ public class Student {
 	public void setNext(Student next) {
 		this.next = next;
 	}
+	//endregion
+
+	//region Supporting Methods
+
+	public static int getNumStudents() {
+		return numStudents;
+	}
+	public void decrementNumStudents() {
+		numStudents--;
+	}
+	public void incrementNumStudents() {
+		numStudents++;
+	}
+
+	@Override
+	public String toString() {
+		String output = "";
+		output = output + String.format("\t%s %s (ID # %d):\n", firstName, lastName, ID);
+		output = output + String.format("\t\tExam 1:      % 2d\n", (int)examGrades[0]);
+		output = output + String.format("\t\tExam 2:      % 2d\n", (int)examGrades[1]);
+		output = output + String.format("\t\tFinal Exam:  % 2d\n", (int)examGrades[2]);
+		output = output + String.format("\t\tFinal Grade:  %3.2f\n", finalGrade);
+		output = output + String.format("\t\tLetter Grade:%2c", letterGrade);
+
+		return output;
+	}
+	//endregion
 }
