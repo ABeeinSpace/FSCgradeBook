@@ -1,5 +1,6 @@
 package fscgradebook;
 
+import java.io.PrintWriter;
 import java.util.Objects;
 
 public class FSCCourseRoster {
@@ -50,15 +51,15 @@ public class FSCCourseRoster {
 		Student hp = p;
 		/*We loop while hp.getNext() does NOT equal null because if we tried to execute line 42 against a null value
 		Java would get angry at us and we would crash and burn.*/
-		while (hp.getNext() != null) {
+		while (hp != null) {
 			if (Objects.equals(hp.getFirstName(), firstName)) {
 				/*We have to check the last name in case two students share a first name. */
 				if (Objects.equals(hp.getLastName(), lastName)) {
 					return true;
 				}
-				hp = hp.getNext();
 			}
 			hp = hp.getNext();
+
 		}
 		return false;
 	}
@@ -73,6 +74,23 @@ public class FSCCourseRoster {
 		while (helpPtr != null) {
 			if (helpPtr.getID() == data)
 				return helpPtr;
+			helpPtr = helpPtr.getNext();
+		}
+		return null;
+	}
+	public Student findNode(String firstName, String lastName) {
+		Student bro = findNode(head, firstName, lastName);
+		return bro;
+	}
+
+	private Student findNode(Student p, String firstName, String lastName) {
+		Student helpPtr = p;
+		while (helpPtr != null) {
+			if (helpPtr.getFirstName().equals(firstName)) {
+				if (helpPtr.getLastName().equals(lastName))	{
+					return helpPtr;
+				}
+			}
 			helpPtr = helpPtr.getNext();
 		}
 		return null;
@@ -145,18 +163,64 @@ public class FSCCourseRoster {
 
 	}
 
-	public void printStats() {
-		// We need to traverse...so we need a help ptr
-		Student helpPtr = head;
-		// Traverse to correct insertion point
-		while (helpPtr != null) {
-			// Print the data value of the node
-			StringBuilder output = new StringBuilder();
-			output.append(helpPtr.toString());
-			// Step one node over
-			helpPtr = helpPtr.getNext();
+	public void printStats(PrintWriter out) {
+//		// We need to traverse...so we need a help ptr
+//		Student helpPtr = head;
+//		// Traverse to correct insertion point
+//		String output = "";
+//		while (helpPtr != null) {
+//			// Print the data value of the node
+//			output += helpPtr.toString();
+//			// Step one node over
+//			helpPtr = helpPtr.getNext();
+//		}
+//		return output;
+
+		if (Student.getNumStudents() == 0) {
+			out.println("Statistical Results for All Courses:\n");
+			out.printf("   Total number of student records: 0\n");
+			out.printf("   Average Score: 0.00\n");
+			out.printf("   Highest Score: 0.00\n");
+			out.printf("   Lowest Score:  0.00\n");
+
+			out.printf("   Total 'A' Grades: 0  (0%% of class)\n");
+			out.printf("   Total 'B' Grades: 0  (0%% of class)\n");
+			out.printf("   Total 'C' Grades: 0  (0%% of class)\n");
+			out.printf("   Total 'D' Grades: 0  (0%% of class)\n");
+			out.printf("   Total 'F' Grades: 0  (0%% of class)\n");
+			out.println();
 		}
-		System.out.println();
+//		else {
+//			double sumOfGrades = 0.0;
+//			double averageGrade = 0.0;
+//			double highestGrade = 0;
+//			double lowestGrade = getFinalGrade();
+//			for (int i = 0; i < FSCStudent.getNumStudents(); i++) {
+//				if (students[i].getFinalGrade() != 0) {
+////					FSCStudent student = students[i];
+//					if (students[i].getFinalGrade() > highestGrade) {
+//						highestGrade = students[i].getFinalGrade();
+//					} else if (students[i].getFinalGrade() < lowestGrade) {
+//						lowestGrade = students[i].getFinalGrade();
+//					}
+//					sumOfGrades += students[i].getFinalGrade();
+//				}
+//			}
+//			averageGrade = sumOfGrades / Student.getNumStudents();
+//			out.printf("Statistical Results of %s:\n", courseNumber);
+//			out.printf("   Total number of student records: %d\n", Student.getNumStudents());
+//			out.printf("   Average Score: %3.2f\n", averageGrade);
+//			out.printf("   Highest Score: %3.2f\n", highestGrade);
+//			out.printf("   Lowest Score:%7.2f\n", lowestGrade);
+//
+//			out.printf("   Total 'A' Grades: %3d (%6.2f%% of class)\n", gradeCounter(students, 'A'), (gradeCounter(students, 'A') / (double)Student.getNumStudents()) * 100);
+//			out.printf("   Total 'B' Grades: %3d (%6.2f%% of class)\n", gradeCounter(students, 'B'), (gradeCounter(students, 'B') / (double)Student.getNumStudents()) * 100);
+//			out.printf("   Total 'C' Grades: %3d (%6.2f%% of class)\n", gradeCounter(students, 'C'), (gradeCounter(students, 'C') / (double)Student.getNumStudents()) * 100);
+//			out.printf("   Total 'D' Grades: %3d (%6.2f%% of class)\n", gradeCounter(students, 'D'), (gradeCounter(students, 'D') / (double)Student.getNumStudents()) * 100);
+//			out.printf("   Total 'F' Grades: %3d (%6.2f%% of class)\n", gradeCounter(students, 'F'), (gradeCounter(students, 'F') / (double)Student.getNumStudents()) * 100);
+//			out.println();
+//		}
+
 	}
 
 	@Override

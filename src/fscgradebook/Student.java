@@ -121,7 +121,7 @@ public class Student {
 		output = output + String.format("\t\tExam 2:      % 2d\n", (int)examGrades[1]);
 		output = output + String.format("\t\tFinal Exam:  % 2d\n", (int)examGrades[2]);
 		output = output + String.format("\t\tFinal Grade:  %3.2f\n", finalGrade);
-		output = output + String.format("\t\tLetter Grade:%2c", letterGrade);
+		output = output + String.format("\t\tLetter Grade:%2c\n", letterGrade);
 
 		return output;
 	}

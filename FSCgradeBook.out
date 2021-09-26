@@ -1,8 +1,46 @@
 Running DISPLAYSTUDENTS...
 	ERROR: there are no students currently in the system.
 Running DISPLAYSTATS...
+Statistical Results for All Courses:
+
+   Total number of student records: 0
+   Average Score: 0.00
+   Highest Score: 0.00
+   Lowest Score:  0.00
+   Total 'A' Grades: 0  (0% of class)
+   Total 'B' Grades: 0  (0% of class)
+   Total 'C' Grades: 0  (0% of class)
+   Total 'D' Grades: 0  (0% of class)
+   Total 'F' Grades: 0  (0% of class)
+
+Statistical Results for All Courses:
+
+   Total number of student records: 0
+   Average Score: 0.00
+   Highest Score: 0.00
+   Lowest Score:  0.00
+   Total 'A' Grades: 0  (0% of class)
+   Total 'B' Grades: 0  (0% of class)
+   Total 'C' Grades: 0  (0% of class)
+   Total 'D' Grades: 0  (0% of class)
+   Total 'F' Grades: 0  (0% of class)
+
+Statistical Results for All Courses:
+
+   Total number of student records: 0
+   Average Score: 0.00
+   Highest Score: 0.00
+   Lowest Score:  0.00
+   Total 'A' Grades: 0  (0% of class)
+   Total 'B' Grades: 0  (0% of class)
+   Total 'C' Grades: 0  (0% of class)
+   Total 'D' Grades: 0  (0% of class)
+   Total 'F' Grades: 0  (0% of class)
+
 Running SEARCHBYID...
+	ERROR: there is no record for student ID# 111.
 Running SEARCHBYNAME...
+	ERROR: there is no record for student "Kalyn Salido".
 Running ADDRECORD...
    Kalyn Salido (ID# 111) has been added to CSC-2207.
    Final Grade: 90.10 (A)
@@ -10,7 +48,9 @@ Running ADDRECORD...
    Kalyn Salido (ID# 111) has been added to CSC-3280.
    Final Grade: 90.10 (A)
 Running SEARCHBYNAME...
+	ERROR: there is no record for student "Kalyn Salido".
 Running SEARCHBYID...
+	ERROR: there is no record for student ID# 111.
 Running DISPLAYSTATS...
 Running DISPLAYSTUDENTS...
 Course roster for CSC-3280
@@ -20,6 +60,7 @@ Course roster for CSC-3280
 		Final Exam:   94
 		Final Grade:  90.10
 		Letter Grade: A
+
 Running DISPLAYSTUDENTS...
 Course roster for CSC-2100
 
@@ -31,7 +72,16 @@ Running ADDRECORD...
    Final Grade: 60.00 (D)
 Running DISPLAYSTATS...
 Running SEARCHBYID...
+	Samuel Rogers (ID # 871):
+		Exam 1:       90
+		Exam 2:       70
+		Final Exam:   82
+		Final Grade:  80.80
+		Letter Grade: B
+
+	ERROR: there is no record for student ID# 871.
 Running SEARCHBYNAME...
+	ERROR: there is no record for student "Wesley Herrick".
 Running DISPLAYSTUDENTS...
 Course roster for CSC-2290
 	Samuel Rogers (ID # 871):
@@ -40,6 +90,7 @@ Course roster for CSC-2290
 		Final Exam:   82
 		Final Grade:  80.80
 		Letter Grade: B
+
 Course roster for CSC-3280
 	Kalyn Salido (ID # 111):
 		Exam 1:       90
@@ -47,6 +98,7 @@ Course roster for CSC-3280
 		Final Exam:   94
 		Final Grade:  90.10
 		Letter Grade: A
+
 Course roster for CSC-2100
 	Wesley Herrick (ID # 253):
 		Exam 1:       40
@@ -54,6 +106,7 @@ Course roster for CSC-2100
 		Final Exam:   60
 		Final Grade:  60.00
 		Letter Grade: D
+
 Running ADDRECORD...
    Student PlaysALot (ID# 584) has been added to CSC-2290.
    Final Grade: 26.20 (F)
@@ -67,14 +120,17 @@ Course roster for CSC-2290
 		Exam 2:       70
 		Final Exam:   82
 		Final Grade:  80.80
-		Letter Grade: B	Student PlaysALot (ID # 584):
+		Letter Grade: B
+	Student PlaysALot (ID # 584):
 		Exam 1:       30
 		Exam 2:       20
 		Final Exam:   28
 		Final Grade:  26.20
 		Letter Grade: F
+
 Running DISPLAYSTATS...
 Running SEARCHBYID...
+	ERROR: there is no record for student ID# 111.
 Running ADDRECORD...
    Stephan Bradford (ID# 289) has been added to CSC-3280.
    Final Grade: 66.40 (D)
@@ -91,24 +147,29 @@ Course roster for CSC-3280
 		Exam 2:       85
 		Final Exam:   94
 		Final Grade:  90.10
-		Letter Grade: A	Al Jifri (ID # 124):
+		Letter Grade: A
+	Al Jifri (ID # 124):
 		Exam 1:       96
 		Exam 2:       98
 		Final Exam:   94
 		Final Grade:  95.80
-		Letter Grade: A	Stephan Bradford (ID # 289):
+		Letter Grade: A
+	Stephan Bradford (ID # 289):
 		Exam 1:       62
 		Exam 2:       58
 		Final Exam:   76
 		Final Grade:  66.40
-		Letter Grade: D	Student WhoWorksHard (ID # 777):
+		Letter Grade: D
+	Student WhoWorksHard (ID # 777):
 		Exam 1:       100
 		Exam 2:       100
 		Final Exam:   100
 		Final Grade:  100.00
 		Letter Grade: A
+
 Running DISPLAYSTATS...
 Running SEARCHBYNAME...
+	ERROR: there is no record for student "Student WhoWorksHard".
 Running DISPLAYSTATS...
 Running DISPLAYSTUDENTS...
 Course roster for CSC-2290
@@ -117,46 +178,54 @@ Course roster for CSC-2290
 		Exam 2:       70
 		Final Exam:   82
 		Final Grade:  80.80
-		Letter Grade: B	Student PlaysALot (ID # 584):
+		Letter Grade: B
+	Student PlaysALot (ID # 584):
 		Exam 1:       30
 		Exam 2:       20
 		Final Exam:   28
 		Final Grade:  26.20
 		Letter Grade: F
+
 Course roster for CSC-3280
 	Kalyn Salido (ID # 111):
 		Exam 1:       90
 		Exam 2:       85
 		Final Exam:   94
 		Final Grade:  90.10
-		Letter Grade: A	Al Jifri (ID # 124):
+		Letter Grade: A
+	Al Jifri (ID # 124):
 		Exam 1:       96
 		Exam 2:       98
 		Final Exam:   94
 		Final Grade:  95.80
-		Letter Grade: A	Stephan Bradford (ID # 289):
+		Letter Grade: A
+	Stephan Bradford (ID # 289):
 		Exam 1:       62
 		Exam 2:       58
 		Final Exam:   76
 		Final Grade:  66.40
-		Letter Grade: D	Student WhoWorksHard (ID # 777):
+		Letter Grade: D
+	Student WhoWorksHard (ID # 777):
 		Exam 1:       100
 		Exam 2:       100
 		Final Exam:   100
 		Final Grade:  100.00
 		Letter Grade: A
+
 Course roster for CSC-2100
 	Wesley Herrick (ID # 253):
 		Exam 1:       40
 		Exam 2:       80
 		Final Exam:   60
 		Final Grade:  60.00
-		Letter Grade: D	Kalyn Salido (ID # 111):
+		Letter Grade: D
+	Kalyn Salido (ID # 111):
 		Exam 1:       87
 		Exam 2:       82
 		Final Exam:   91
 		Final Grade:  87.10
 		Letter Grade: B
+
 Running DELETERECORD...
 	Kalyn Salido (ID 111) has been deleted from CSC-3280
 	Kalyn Salido (ID 111) has been deleted from CSC-2100
@@ -168,29 +237,34 @@ Course roster for CSC-2290
 		Exam 2:       70
 		Final Exam:   82
 		Final Grade:  80.80
-		Letter Grade: B	Student PlaysALot (ID # 584):
+		Letter Grade: B
+	Student PlaysALot (ID # 584):
 		Exam 1:       30
 		Exam 2:       20
 		Final Exam:   28
 		Final Grade:  26.20
 		Letter Grade: F
+
 Course roster for CSC-3280
 	Al Jifri (ID # 124):
 		Exam 1:       96
 		Exam 2:       98
 		Final Exam:   94
 		Final Grade:  95.80
-		Letter Grade: A	Stephan Bradford (ID # 289):
+		Letter Grade: A
+	Stephan Bradford (ID # 289):
 		Exam 1:       62
 		Exam 2:       58
 		Final Exam:   76
 		Final Grade:  66.40
-		Letter Grade: D	Student WhoWorksHard (ID # 777):
+		Letter Grade: D
+	Student WhoWorksHard (ID # 777):
 		Exam 1:       100
 		Exam 2:       100
 		Final Exam:   100
 		Final Grade:  100.00
 		Letter Grade: A
+
 Course roster for CSC-2100
 	Wesley Herrick (ID # 253):
 		Exam 1:       40
@@ -198,10 +272,13 @@ Course roster for CSC-2100
 		Final Exam:   60
 		Final Grade:  60.00
 		Letter Grade: D
+
 Running DELETERECORD...
 	Wesley Herrick (ID 253) has been deleted from CSC-2100
 Running SEARCHBYID...
+	ERROR: there is no record for student ID# 111.
 Running SEARCHBYID...
+	ERROR: there is no record for student ID# 253.
 Running DISPLAYSTATS...
 Running DISPLAYSTUDENTS...
 Course roster for CSC-2290
@@ -210,28 +287,33 @@ Course roster for CSC-2290
 		Exam 2:       70
 		Final Exam:   82
 		Final Grade:  80.80
-		Letter Grade: B	Student PlaysALot (ID # 584):
+		Letter Grade: B
+	Student PlaysALot (ID # 584):
 		Exam 1:       30
 		Exam 2:       20
 		Final Exam:   28
 		Final Grade:  26.20
 		Letter Grade: F
+
 Course roster for CSC-3280
 	Al Jifri (ID # 124):
 		Exam 1:       96
 		Exam 2:       98
 		Final Exam:   94
 		Final Grade:  95.80
-		Letter Grade: A	Stephan Bradford (ID # 289):
+		Letter Grade: A
+	Stephan Bradford (ID # 289):
 		Exam 1:       62
 		Exam 2:       58
 		Final Exam:   76
 		Final Grade:  66.40
-		Letter Grade: D	Student WhoWorksHard (ID # 777):
+		Letter Grade: D
+	Student WhoWorksHard (ID # 777):
 		Exam 1:       100
 		Exam 2:       100
 		Final Exam:   100
 		Final Grade:  100.00
 		Letter Grade: A
+
 Course roster for CSC-2100
 

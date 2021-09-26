@@ -55,15 +55,15 @@ public class Main {
                     break;
                 case "SEARCHBYID":
                     out.println("Running SEARCHBYID...");
-//                    searchByID();
+                    searchByID(courses, numCourses, in, out);
                     break;
                 case "SEARCHBYNAME":
                     out.println("Running SEARCHBYNAME...");
-//                    searchByName();
+                    searchByName(courses, numCourses, in, out);
                     break;
                 case "DISPLAYSTATS":
                     out.println("Running DISPLAYSTATS...");
-//                    displayStats();
+                    displayStats(courses, numCourses, in, out);
                     break;
                 case "DISPLAYSTUDENTS":
                     out.println("Running DISPLAYSTUDENTS...");
@@ -74,6 +74,9 @@ public class Main {
                 Note: The reason I don't use System.exit() here is because it's not convention. If I could exit with
                 an F1 driver's number as the code I absolutely would. */
                 case "QUIT":
+                    out.println("Thank you for using the the FSC Grade Book.\n" +
+                            "\n" +
+                            "Goodbye.");
                     in.close();
                     out.close();
                     return;
@@ -138,6 +141,40 @@ public class Main {
                 out.printf("\t%s %s (ID %d) has been deleted from %s\n", deletedBoi.getFirstName(),
                         deletedBoi.getLastName(), deletedBoi.getID(), deletedBoi.getCourseNumber());
                 courses[i].delete(studentID);
+            }
+        }
+
+    }
+
+    public static void searchByID(FSCCourseRoster[] courses, int numCourses, Scanner in, PrintWriter out) {
+        int ID = in.nextInt();
+        for (int i = 0; i < numCourses; i++) {
+            if (courses[i].searchID(ID)) {
+                out.println(courses[i].findNode(ID).toString());
+            } else {
+                out.printf("	ERROR: there is no record for student ID# %d.\n", ID);
+                return;
+            }
+        }
+    }
+    public static void searchByName(FSCCourseRoster[] courses, int numCourses, Scanner in, PrintWriter out) {
+        String firstName = in.next();
+        String lastName = in.next();
+        for (int i = 0; i < numCourses; i++) {
+            if (courses[i].searchName(firstName, lastName)) {
+                out.println(courses[i].findNode(firstName, lastName).toString());
+            } else {
+                out.printf("	ERROR: there is no record for student \"%s %s\".\n", firstName, lastName);
+                return;
+            }
+        }
+    }
+
+    public static void displayStats(FSCCourseRoster[] courses, int numCourses, Scanner in, PrintWriter out) {
+        String courseToPrint = in.next();
+        if (courseToPrint.equals("ALL")) {
+            for (int i = 0; i < numCourses; i++) {
+                courses[i].printStats(out);
             }
         }
 
