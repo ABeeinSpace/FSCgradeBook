@@ -29,44 +29,47 @@ public class Main {
             // Nobody's going to see these exit codes, so I think I can have fun with them.
         }
 
+        out.println("Welcome to the FSC Grade Book.");
+
+
         /*Setup for the program before we actually process any input*/
 
         int numCourses = in.nextInt();
 
         FSCCourseRoster[] courses = new FSCCourseRoster[numCourses];
 
+        out.println("The following course(s) have been added to the database:");
+
         for (int i = 0; i < numCourses; i++) {
             courses[i] = new FSCCourseRoster();
             courses[i].setCourseNumber(in.next());
+            out.printf("\t %s\n", courses[i].getCourseNumber());
         }
+
+
 
         /*Main program execution loop.
          * This loop will run until the QUIT command is read, at which point we're done here.
          * We should start cleaning up after ourselves and prepare to exit.*/
         while (true) {
+            out.println(); //This println call is just to make sure the output is properly spaced apart
             switch (in.next()) {
                 case "ADDRECORD":
-                    out.println("Running ADDRECORD...");
                     addRecord(in, out, courses, numCourses);
                     break;
                 case "DELETERECORD":
-                    out.println("Running DELETERECORD...");
                     deleteRecord(in, out, courses, numCourses);
                     break;
                 case "SEARCHBYID":
-                    out.println("Running SEARCHBYID...");
                     searchByID(courses, numCourses, in, out);
                     break;
                 case "SEARCHBYNAME":
-                    out.println("Running SEARCHBYNAME...");
                     searchByName(courses, numCourses, in, out);
                     break;
                 case "DISPLAYSTATS":
-                    out.println("Running DISPLAYSTATS...");
                     displayStats(courses, numCourses, in, out);
                     break;
                 case "DISPLAYSTUDENTS":
-                    out.println("Running DISPLAYSTUDENTS...");
                     displayStudents(courses, numCourses, in, out);
                     break;
                 /*This case is kinda special since we need to do our cleanup work here. If I'm going to just return
@@ -84,7 +87,9 @@ public class Main {
         }
     }
 
+    //region addRecord and supporting methods
     public static void addRecord(Scanner in, PrintWriter out, FSCCourseRoster[] courses, int numCourses) {
+        out.println("Command: ADDRECORD");
         String courseNumber = in.next();
         int ID = in.nextInt();
         String firstName = in.next();
@@ -131,8 +136,10 @@ public class Main {
 
         return studentLetterGrade;
     }
+    //endregion
 
     public static void deleteRecord(Scanner in, PrintWriter out, FSCCourseRoster[] courses, int numCourses) {
+        out.println("Command: DELETERECORD");
         int studentID = in.nextInt();
 
         for (int i = 0; i < numCourses; i++) {
@@ -146,17 +153,16 @@ public class Main {
     }
 
     public static void searchByID(FSCCourseRoster[] courses, int numCourses, Scanner in, PrintWriter out) {
+        out.println("Command: SEARCHBYID");
         int ID = in.nextInt();
         for (int i = 0; i < numCourses; i++) {
             if (courses[i].searchID(ID)) {
                 out.println(courses[i].findNode(ID).toString());
-            } else {
-                out.printf("	ERROR: there is no record for student ID# %d.\n", ID);
-                return;
             }
         }
     }
     public static void searchByName(FSCCourseRoster[] courses, int numCourses, Scanner in, PrintWriter out) {
+        out.println("Command: SEARCHBYNAME");
         String firstName = in.next();
         String lastName = in.next();
         for (int i = 0; i < numCourses; i++) {
@@ -171,12 +177,13 @@ public class Main {
 
     public static void displayStats(FSCCourseRoster[] courses, int numCourses, Scanner in, PrintWriter out) {
         String courseToPrint = in.next();
+        out.println("Command: DISPLAYSTATS ("+ courseToPrint + ")");
         if (courseToPrint.equals("ALL")) {
             courses[0].printStats(out); //TODO: Fix this fuckery
         } else {
             for (int i = 0; i < numCourses; i++) {
                 if (courses[i].getCourseNumber().equals(courseToPrint)) {
-                    out.println(courses[i].toString());
+                    courses[i].printStats(out);
                 }
             }
         }
@@ -184,18 +191,23 @@ public class Main {
 
     public static void displayStudents(FSCCourseRoster[] courses, int numCourses, Scanner in, PrintWriter out) {
         String courseNum = in.next();
+        out.println("Command: DISPLAYSTUDENTS ("+ courseNum + ")");
         if (Student.getNumStudents() == 0) {
             out.println("\tERROR: there are no students currently in the system.");
             return;
         }
         if (courseNum.equals("ALL")) {
             for (int i = 0; i < numCourses; i++) {
-                out.println(courses[i].toString());
+                if (courses[i].isEmpty()) {
+                    continue;
+                } else {
+                    out.print(courses[i].toString());
+                }
             }
         } else {
             for (int i = 0; i < numCourses; i++) {
                 if (courses[i].getCourseNumber().equals(courseNum)) {
-                    out.println(courses[i].toString());
+                    out.print(courses[i].toString());
                 }
             }
         }

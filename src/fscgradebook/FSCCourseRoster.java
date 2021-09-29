@@ -188,9 +188,32 @@ public class FSCCourseRoster {
 			out.printf("   Total 'C' Grades: 0  (0%% of class)\n");
 			out.printf("   Total 'D' Grades: 0  (0%% of class)\n");
 			out.printf("   Total 'F' Grades: 0  (0%% of class)\n");
-			out.println();
 		}
 
+		else {
+			Student helpPtr = head;
+			double sum = 0.0;
+			double average = 0.0;
+			double highest = 0.0;
+			double lowest = 0.0;
+
+			while (helpPtr != null) {
+				if (helpPtr.getFinalGrade() > highest) {
+					highest = helpPtr.getFinalGrade();
+				} else if (helpPtr.getFinalGrade() < lowest) {
+					lowest = helpPtr.getFinalGrade();
+				}
+				sum += helpPtr.getFinalGrade();
+				helpPtr = helpPtr.getNext();
+			}
+			average = sum / Student.getNumStudents();
+
+			out.printf("Statistical Results of %s:\n", courseNumber);
+			out.printf("\tTotal number of student records: %d\n", Student.getNumStudents());
+			out.printf("\tAverage Score: %3.2f\n", average);
+			out.printf("\tHighest Score: %3.2f\n", highest);
+			out.printf("\tLowest Score:%7.2f\n", lowest);
+		}
 //		else {
 //			double sumOfGrades = 0.0;
 //			double averageGrade = 0.0;
@@ -219,7 +242,6 @@ public class FSCCourseRoster {
 //			out.printf("   Total 'C' Grades: %3d (%6.2f%% of class)\n", gradeCounter(students, 'C'), (gradeCounter(students, 'C') / (double)Student.getNumStudents()) * 100);
 //			out.printf("   Total 'D' Grades: %3d (%6.2f%% of class)\n", gradeCounter(students, 'D'), (gradeCounter(students, 'D') / (double)Student.getNumStudents()) * 100);
 //			out.printf("   Total 'F' Grades: %3d (%6.2f%% of class)\n", gradeCounter(students, 'F'), (gradeCounter(students, 'F') / (double)Student.getNumStudents()) * 100);
-//			out.println();
 //		}
 
 	}
@@ -228,6 +250,9 @@ public class FSCCourseRoster {
 	public String toString() {
 		String output = "";
 		output += String.format("Course roster for %s\n", courseNumber);
+		if (isEmpty()) {
+
+		}
 		Student helpPtr = head;
 		while (helpPtr != null) {
 			output += helpPtr.toString();
