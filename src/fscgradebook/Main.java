@@ -143,7 +143,6 @@ public class Main {
                 courses[i].delete(studentID);
             }
         }
-
     }
 
     public static void searchByID(FSCCourseRoster[] courses, int numCourses, Scanner in, PrintWriter out) {
@@ -173,11 +172,14 @@ public class Main {
     public static void displayStats(FSCCourseRoster[] courses, int numCourses, Scanner in, PrintWriter out) {
         String courseToPrint = in.next();
         if (courseToPrint.equals("ALL")) {
+            courses[0].printStats(out); //TODO: Fix this fuckery
+        } else {
             for (int i = 0; i < numCourses; i++) {
-                courses[i].printStats(out);
+                if (courses[i].getCourseNumber().equals(courseToPrint)) {
+                    out.println(courses[i].toString());
+                }
             }
         }
-
     }
 
     public static void displayStudents(FSCCourseRoster[] courses, int numCourses, Scanner in, PrintWriter out) {
@@ -198,6 +200,4 @@ public class Main {
             }
         }
     }
-
-
 }

@@ -190,6 +190,7 @@ public class FSCCourseRoster {
 			out.printf("   Total 'F' Grades: 0  (0%% of class)\n");
 			out.println();
 		}
+
 //		else {
 //			double sumOfGrades = 0.0;
 //			double averageGrade = 0.0;

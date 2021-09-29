@@ -52,6 +52,14 @@ Running SEARCHBYNAME...
 Running SEARCHBYID...
 	ERROR: there is no record for student ID# 111.
 Running DISPLAYSTATS...
+Course roster for CSC-3280
+	Kalyn Salido (ID # 111):
+		Exam 1:       90
+		Exam 2:       85
+		Final Exam:   94
+		Final Grade:  90.10
+		Letter Grade: A
+
 Running DISPLAYSTUDENTS...
 Course roster for CSC-3280
 	Kalyn Salido (ID # 111):
@@ -129,6 +137,20 @@ Course roster for CSC-2290
 		Letter Grade: F
 
 Running DISPLAYSTATS...
+Course roster for CSC-2290
+	Samuel Rogers (ID # 871):
+		Exam 1:       90
+		Exam 2:       70
+		Final Exam:   82
+		Final Grade:  80.80
+		Letter Grade: B
+	Student PlaysALot (ID # 584):
+		Exam 1:       30
+		Exam 2:       20
+		Final Exam:   28
+		Final Grade:  26.20
+		Letter Grade: F
+
 Running SEARCHBYID...
 	ERROR: there is no record for student ID# 111.
 Running ADDRECORD...
@@ -168,6 +190,32 @@ Course roster for CSC-3280
 		Letter Grade: A
 
 Running DISPLAYSTATS...
+Course roster for CSC-3280
+	Kalyn Salido (ID # 111):
+		Exam 1:       90
+		Exam 2:       85
+		Final Exam:   94
+		Final Grade:  90.10
+		Letter Grade: A
+	Al Jifri (ID # 124):
+		Exam 1:       96
+		Exam 2:       98
+		Final Exam:   94
+		Final Grade:  95.80
+		Letter Grade: A
+	Stephan Bradford (ID # 289):
+		Exam 1:       62
+		Exam 2:       58
+		Final Exam:   76
+		Final Grade:  66.40
+		Letter Grade: D
+	Student WhoWorksHard (ID # 777):
+		Exam 1:       100
+		Exam 2:       100
+		Final Exam:   100
+		Final Grade:  100.00
+		Letter Grade: A
+
 Running SEARCHBYNAME...
 	ERROR: there is no record for student "Student WhoWorksHard".
 Running DISPLAYSTATS...
@@ -317,3 +365,6 @@ Course roster for CSC-3280
 
 Course roster for CSC-2100
 
+Thank you for using the the FSC Grade Book.
+
+Goodbye.
