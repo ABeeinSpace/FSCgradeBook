@@ -177,17 +177,17 @@ public class FSCCourseRoster {
 //		return output;
 
 		if (Student.getNumStudents() == 0) {
-			out.println("Statistical Results for All Courses:\n");
+			out.println("Statistical Results for All Courses:");
 			out.printf("   Total number of student records: 0\n");
 			out.printf("   Average Score: 0.00\n");
 			out.printf("   Highest Score: 0.00\n");
 			out.printf("   Lowest Score:  0.00\n");
 
-			out.printf("   Total 'A' Grades: 0  (0%% of class)\n");
-			out.printf("   Total 'B' Grades: 0  (0%% of class)\n");
-			out.printf("   Total 'C' Grades: 0  (0%% of class)\n");
-			out.printf("   Total 'D' Grades: 0  (0%% of class)\n");
-			out.printf("   Total 'F' Grades: 0  (0%% of class)\n");
+			out.printf("   Total 'A' Grades: 0  (0.00%% of class)\n");
+			out.printf("   Total 'B' Grades: 0  (0.00%% of class)\n");
+			out.printf("   Total 'C' Grades: 0  (0.00%% of class)\n");
+			out.printf("   Total 'D' Grades: 0  (0.00%% of class)\n");
+			out.printf("   Total 'F' Grades: 0  (0.00%% of class)\n");
 		} else {
 			Student helpPtr = head;
 			double sum = 0.0;
@@ -246,7 +246,7 @@ public class FSCCourseRoster {
 	@Override
 	public String toString() {
 		String output = "";
-		output += String.format("Course roster for %s\n", courseNumber);
+		output += String.format("Course Roster for %s\n", courseNumber);
 		if (isEmpty()) {
 
 		}

@@ -29,7 +29,7 @@ public class Main {
             // Nobody's going to see these exit codes, so I think I can have fun with them.
         }
 
-        out.println("Welcome to the FSC Grade Book.");
+        out.println("Welcome to the FSC Grade Book.\n");
 
 
         /*Setup for the program before we actually process any input*/
@@ -110,7 +110,7 @@ public class Main {
                 courses[i].insert(newStudent);
             }
         }
-        out.printf("   %s %s (ID# %d) has been added to %s.\n   Final Grade: %5.2f (%c)\n",
+        out.printf("   %s %s (ID# %d) has been added to %s.\n   Final Grade: %5.2f (%c).\n",
                 newStudent.getFirstName(),
                 newStudent.getLastName(), newStudent.getID(), newStudent.getCourseNumber(), newStudent.getFinalGrade(),
                 newStudent.getLetterGrade());
@@ -158,6 +158,9 @@ public class Main {
         for (int i = 0; i < numCourses; i++) {
             if (courses[i].searchID(ID)) {
                 out.println(courses[i].findNode(ID).toString());
+            } else {
+                out.printf("	ERROR: there is no record for student ID# %d.\n", ID);
+                return;
             }
         }
     }

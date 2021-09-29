@@ -1,4 +1,5 @@
 Welcome to the FSC Grade Book.
+
 The following course(s) have been added to the database:
 	 CSC-2290
 	 CSC-3280
@@ -9,41 +10,35 @@ Command: DISPLAYSTUDENTS (ALL)
 
 Command: DISPLAYSTATS (ALL)
 Statistical Results for All Courses:
-
    Total number of student records: 0
    Average Score: 0.00
    Highest Score: 0.00
    Lowest Score:  0.00
-   Total 'A' Grades: 0  (0% of class)
-   Total 'B' Grades: 0  (0% of class)
-   Total 'C' Grades: 0  (0% of class)
-   Total 'D' Grades: 0  (0% of class)
-   Total 'F' Grades: 0  (0% of class)
+   Total 'A' Grades: 0  (0.00% of class)
+   Total 'B' Grades: 0  (0.00% of class)
+   Total 'C' Grades: 0  (0.00% of class)
+   Total 'D' Grades: 0  (0.00% of class)
+   Total 'F' Grades: 0  (0.00% of class)
 
 Command: SEARCHBYID
+	ERROR: there is no record for student ID# 111.
 
 Command: SEARCHBYNAME
 	ERROR: there is no record for student "Kalyn Salido".
 
 Command: ADDRECORD
    Kalyn Salido (ID# 111) has been added to CSC-2207.
-   Final Grade: 90.10 (A)
+   Final Grade: 90.10 (A).
 
 Command: ADDRECORD
    Kalyn Salido (ID# 111) has been added to CSC-3280.
-   Final Grade: 90.10 (A)
+   Final Grade: 90.10 (A).
 
 Command: SEARCHBYNAME
 	ERROR: there is no record for student "Kalyn Salido".
 
 Command: SEARCHBYID
-	Kalyn Salido (ID # 111):
-		Exam 1:       90
-		Exam 2:       85
-		Final Exam:   94
-		Final Grade:  90.10
-		Letter Grade: A
-
+	ERROR: there is no record for student ID# 111.
 
 Command: DISPLAYSTATS (CSC-3280)
 Statistical Results of CSC-3280:
@@ -71,11 +66,11 @@ Course roster for CSC-2100
 
 Command: ADDRECORD
    Samuel Rogers (ID# 871) has been added to CSC-2290.
-   Final Grade: 80.80 (B)
+   Final Grade: 80.80 (B).
 
 Command: ADDRECORD
    Wesley Herrick (ID# 253) has been added to CSC-2100.
-   Final Grade: 60.00 (D)
+   Final Grade: 60.00 (D).
 
 Command: DISPLAYSTATS (ALL)
 Statistical Results of CSC-2290:
@@ -97,6 +92,7 @@ Command: SEARCHBYID
 		Final Grade:  80.80
 		Letter Grade: B
 
+	ERROR: there is no record for student ID# 871.
 
 Command: SEARCHBYNAME
 	ERROR: there is no record for student "Wesley Herrick".
@@ -126,11 +122,11 @@ Course roster for CSC-2100
 
 Command: ADDRECORD
    Student PlaysALot (ID# 584) has been added to CSC-2290.
-   Final Grade: 26.20 (F)
+   Final Grade: 26.20 (F).
 
 Command: ADDRECORD
    Kalyn Salido (ID# 111) has been added to CSC-2100.
-   Final Grade: 87.10 (B)
+   Final Grade: 87.10 (B).
 
 Command: DISPLAYSTUDENTS (CSC-2290)
 Course roster for CSC-2290
@@ -160,32 +156,19 @@ Statistical Results of CSC-2290:
 	Total 'F' Grades:   1 ( 16.67% of class)
 
 Command: SEARCHBYID
-	Kalyn Salido (ID # 111):
-		Exam 1:       90
-		Exam 2:       85
-		Final Exam:   94
-		Final Grade:  90.10
-		Letter Grade: A
-
-	Kalyn Salido (ID # 111):
-		Exam 1:       87
-		Exam 2:       82
-		Final Exam:   91
-		Final Grade:  87.10
-		Letter Grade: B
-
+	ERROR: there is no record for student ID# 111.
 
 Command: ADDRECORD
    Stephan Bradford (ID# 289) has been added to CSC-3280.
-   Final Grade: 66.40 (D)
+   Final Grade: 66.40 (D).
 
 Command: ADDRECORD
    Al Jifri (ID# 124) has been added to CSC-3280.
-   Final Grade: 95.80 (A)
+   Final Grade: 95.80 (A).
 
 Command: ADDRECORD
    Student WhoWorksHard (ID# 777) has been added to CSC-3280.
-   Final Grade: 100.00 (A)
+   Final Grade: 100.00 (A).
 
 Command: DISPLAYSTUDENTS (CSC-3280)
 Course roster for CSC-3280
@@ -355,8 +338,10 @@ Command: DELETERECORD
 	Wesley Herrick (ID 253) has been deleted from CSC-2100
 
 Command: SEARCHBYID
+	ERROR: there is no record for student ID# 111.
 
 Command: SEARCHBYID
+	ERROR: there is no record for student ID# 253.
 
 Command: DISPLAYSTATS (ALL)
 Statistical Results of CSC-2290:
