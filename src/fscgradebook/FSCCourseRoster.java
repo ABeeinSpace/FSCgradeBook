@@ -188,19 +188,17 @@ public class FSCCourseRoster {
 			out.printf("   Total 'C' Grades: 0  (0%% of class)\n");
 			out.printf("   Total 'D' Grades: 0  (0%% of class)\n");
 			out.printf("   Total 'F' Grades: 0  (0%% of class)\n");
-		}
-
-		else {
+		} else {
 			Student helpPtr = head;
 			double sum = 0.0;
 			double average = 0.0;
 			double highest = 0.0;
-			double lowest = 0.0;
+			double lowest = helpPtr.getFinalGrade();
 
 			while (helpPtr != null) {
 				if (helpPtr.getFinalGrade() > highest) {
 					highest = helpPtr.getFinalGrade();
-				} else if (helpPtr.getFinalGrade() < lowest) {
+				} else if (helpPtr.getFinalGrade() < lowest && helpPtr.getFinalGrade() != 0) {
 					lowest = helpPtr.getFinalGrade();
 				}
 				sum += helpPtr.getFinalGrade();
@@ -213,38 +211,37 @@ public class FSCCourseRoster {
 			out.printf("\tAverage Score: %3.2f\n", average);
 			out.printf("\tHighest Score: %3.2f\n", highest);
 			out.printf("\tLowest Score:%7.2f\n", lowest);
-		}
-//		else {
-//			double sumOfGrades = 0.0;
-//			double averageGrade = 0.0;
-//			double highestGrade = 0;
-//			double lowestGrade = getFinalGrade();
-//			for (int i = 0; i < FSCStudent.getNumStudents(); i++) {
-//				if (students[i].getFinalGrade() != 0) {
-////					FSCStudent student = students[i];
-//					if (students[i].getFinalGrade() > highestGrade) {
-//						highestGrade = students[i].getFinalGrade();
-//					} else if (students[i].getFinalGrade() < lowestGrade) {
-//						lowestGrade = students[i].getFinalGrade();
-//					}
-//					sumOfGrades += students[i].getFinalGrade();
-//				}
-//			}
-//			averageGrade = sumOfGrades / Student.getNumStudents();
-//			out.printf("Statistical Results of %s:\n", courseNumber);
-//			out.printf("   Total number of student records: %d\n", Student.getNumStudents());
-//			out.printf("   Average Score: %3.2f\n", averageGrade);
-//			out.printf("   Highest Score: %3.2f\n", highestGrade);
-//			out.printf("   Lowest Score:%7.2f\n", lowestGrade);
-//
-//			out.printf("   Total 'A' Grades: %3d (%6.2f%% of class)\n", gradeCounter(students, 'A'), (gradeCounter(students, 'A') / (double)Student.getNumStudents()) * 100);
-//			out.printf("   Total 'B' Grades: %3d (%6.2f%% of class)\n", gradeCounter(students, 'B'), (gradeCounter(students, 'B') / (double)Student.getNumStudents()) * 100);
-//			out.printf("   Total 'C' Grades: %3d (%6.2f%% of class)\n", gradeCounter(students, 'C'), (gradeCounter(students, 'C') / (double)Student.getNumStudents()) * 100);
-//			out.printf("   Total 'D' Grades: %3d (%6.2f%% of class)\n", gradeCounter(students, 'D'), (gradeCounter(students, 'D') / (double)Student.getNumStudents()) * 100);
-//			out.printf("   Total 'F' Grades: %3d (%6.2f%% of class)\n", gradeCounter(students, 'F'), (gradeCounter(students, 'F') / (double)Student.getNumStudents()) * 100);
-//		}
 
+			out.printf("\tTotal 'A' Grades: %3d (%6.2f%% of class)\n", gradeCounter('A'),
+					(gradeCounter('A') / (double)Student.getNumStudents()) * 100);
+			out.printf("\tTotal 'B' Grades: %3d (%6.2f%% of class)\n", gradeCounter('B'),
+					(gradeCounter('B') / (double)Student.getNumStudents()) * 100);
+			out.printf("\tTotal 'C' Grades: %3d (%6.2f%% of class)\n", gradeCounter('C'),
+					(gradeCounter('C') / (double)Student.getNumStudents()) * 100);
+			out.printf("\tTotal 'D' Grades: %3d (%6.2f%% of class)\n", gradeCounter('D'),
+					(gradeCounter('D') / (double)Student.getNumStudents()) * 100);
+			out.printf("\tTotal 'F' Grades: %3d (%6.2f%% of class)\n", gradeCounter('F'),
+					(gradeCounter('F') / (double)Student.getNumStudents()) * 100);
+
+		}
 	}
+
+	// searchByID()
+	// Parameters: FSCStudent[] students, char searchTerm
+	// Returns: Integer
+	// Description: Iterates through the students[] array and returns the amount of a given letter grade that exists in the array.
+	public int gradeCounter(char searchTerm) {
+		int gradeCounter = 0;
+		Student helpPtr = head;
+		while (helpPtr != null) {
+			if (helpPtr.getLetterGrade() == searchTerm && helpPtr.getFinalGrade() != 0) {
+				gradeCounter++;
+			}
+			helpPtr = helpPtr.getNext();
+		}
+		return gradeCounter;
+	}
+
 
 	@Override
 	public String toString() {
