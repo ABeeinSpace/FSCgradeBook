@@ -6,6 +6,7 @@ import java.util.Objects;
 public class FSCCourseRoster {
 	private Student head;
 	private String courseNumber;
+	private int numStudents;
 
 	public FSCCourseRoster(Student head, String courseNumber) {
 		this.courseNumber = courseNumber;
@@ -30,7 +31,7 @@ public class FSCCourseRoster {
 		return searchID(head, searchTerm);
 	}
 
-	private boolean searchID(Student p ,int searchTerm) {
+	private boolean searchID(Student p,int searchTerm) {
 		Student hp = p;
 		/*We loop while hp does NOT equal null because if we tried to execute line 42 against a null value
 		Java would get angry at us and we would crash and burn.*/
@@ -122,6 +123,7 @@ public class FSCCourseRoster {
 			newStudent.setNext(helpPtr.getNext());
 //			Student newNode = new Student(data, helpPtr.getNext());
 			helpPtr.setNext(newStudent);
+			numStudents++;
 		}
 		// Return head
 		return head;
@@ -154,6 +156,7 @@ public class FSCCourseRoster {
 				}
 			}
 			// return the possibly updated head of the list
+			numStudents--;
 			return head;
 		}
 		return head;
@@ -207,7 +210,7 @@ public class FSCCourseRoster {
 			average = sum / Student.getNumStudents();
 
 			out.printf("Statistical Results of %s:\n", courseNumber);
-			out.printf("\tTotal number of student records: %d\n", Student.getNumStudents());
+			out.printf("\tTotal number of student records: %d\n", numStudents);
 			out.printf("\tAverage Score: %3.2f\n", average);
 			out.printf("\tHighest Score: %3.2f\n", highest);
 			out.printf("\tLowest Score:%7.2f\n", lowest);

@@ -1,8 +1,4 @@
 Welcome to the FSC Grade Book.
-<<<<<<< HEAD
-
-=======
->>>>>>> 3ea50ed (Changing displayStats)
 The following course(s) have been added to the database:
 	 CSC-2290
 	 CSC-3280
@@ -13,27 +9,16 @@ Command: DISPLAYSTUDENTS (ALL)
 
 Command: DISPLAYSTATS (ALL)
 Statistical Results for All Courses:
-<<<<<<< HEAD
-=======
 
->>>>>>> 3ea50ed (Changing displayStats)
    Total number of student records: 0
    Average Score: 0.00
    Highest Score: 0.00
    Lowest Score:  0.00
-<<<<<<< HEAD
-   Total 'A' Grades: 0  (0.00% of class)
-   Total 'B' Grades: 0  (0.00% of class)
-   Total 'C' Grades: 0  (0.00% of class)
-   Total 'D' Grades: 0  (0.00% of class)
-   Total 'F' Grades: 0  (0.00% of class)
-=======
    Total 'A' Grades: 0  (0% of class)
    Total 'B' Grades: 0  (0% of class)
    Total 'C' Grades: 0  (0% of class)
    Total 'D' Grades: 0  (0% of class)
    Total 'F' Grades: 0  (0% of class)
->>>>>>> 3ea50ed (Changing displayStats)
 
 Command: SEARCHBYID
 	ERROR: there is no record for student ID# 111.
@@ -42,20 +27,12 @@ Command: SEARCHBYNAME
 	ERROR: there is no record for student "Kalyn Salido".
 
 Command: ADDRECORD
-<<<<<<< HEAD
-	ERROR: cannot add student. Course "CSC-2207" does not exist.
-
-Command: ADDRECORD
-   Kalyn Salido (ID# 111) has been added to CSC-3280.
-   Final Grade: 90.10 (A).
-=======
    Kalyn Salido (ID# 111) has been added to CSC-2207.
    Final Grade: 90.10 (A)
 
 Command: ADDRECORD
    Kalyn Salido (ID# 111) has been added to CSC-3280.
    Final Grade: 90.10 (A)
->>>>>>> 3ea50ed (Changing displayStats)
 
 Command: SEARCHBYNAME
 	ERROR: there is no record for student "Kalyn Salido".
@@ -65,20 +42,6 @@ Command: SEARCHBYID
 
 Command: DISPLAYSTATS (CSC-3280)
 Statistical Results of CSC-3280:
-<<<<<<< HEAD
-	Total number of student records: 2
-	Average Score: 45.05
-	Highest Score: 90.10
-	Lowest Score:  90.10
-	Total 'A' Grades:   1 ( 50.00% of class)
-	Total 'B' Grades:   0 (  0.00% of class)
-	Total 'C' Grades:   0 (  0.00% of class)
-	Total 'D' Grades:   0 (  0.00% of class)
-	Total 'F' Grades:   0 (  0.00% of class)
-
-Command: DISPLAYSTUDENTS (CSC-3280)
-Course Roster for CSC-3280
-=======
 	Total number of student records: 0
 	Average Score: 45.05
 	Highest Score: 90.10
@@ -86,7 +49,6 @@ Course Roster for CSC-3280
 
 Command: DISPLAYSTUDENTS (CSC-3280)
 Course roster for CSC-3280
->>>>>>> 3ea50ed (Changing displayStats)
 	Kalyn Salido (ID # 111):
 		Exam 1:       90
 		Exam 2:       85
@@ -95,29 +57,6 @@ Course roster for CSC-3280
 		Letter Grade: A
 
 Command: DISPLAYSTUDENTS (CSC-2100)
-<<<<<<< HEAD
-	ERROR: there are no student records for CSC-2100.
-
-Command: ADDRECORD
-   Samuel Rogers (ID# 871) has been added to CSC-2290.
-   Final Grade: 80.80 (B).
-
-Command: ADDRECORD
-   Wesley Herrick (ID# 253) has been added to CSC-2100.
-   Final Grade: 60.00 (D).
-
-Command: DISPLAYSTATS (ALL)
-Statistical Results of CSC-2290:
-	Total number of student records: 4
-	Average Score: 20.20
-	Highest Score: 80.80
-	Lowest Score:  80.80
-	Total 'A' Grades:   0 (  0.00% of class)
-	Total 'B' Grades:   1 ( 25.00% of class)
-	Total 'C' Grades:   0 (  0.00% of class)
-	Total 'D' Grades:   0 (  0.00% of class)
-	Total 'F' Grades:   0 (  0.00% of class)
-=======
 Course roster for CSC-2100
 
 Command: ADDRECORD
@@ -134,7 +73,6 @@ Statistical Results of CSC-2290:
 	Average Score: 20.20
 	Highest Score: 80.80
 	Lowest Score:   0.00
->>>>>>> 3ea50ed (Changing displayStats)
 
 Command: SEARCHBYID
 	Samuel Rogers (ID # 871):
@@ -150,33 +88,21 @@ Command: SEARCHBYNAME
 	ERROR: there is no record for student "Wesley Herrick".
 
 Command: DISPLAYSTUDENTS (ALL)
-<<<<<<< HEAD
-Course Roster for CSC-2290
-=======
 Course roster for CSC-2290
->>>>>>> 3ea50ed (Changing displayStats)
 	Samuel Rogers (ID # 871):
 		Exam 1:       90
 		Exam 2:       70
 		Final Exam:   82
 		Final Grade:  80.80
 		Letter Grade: B
-<<<<<<< HEAD
-Course Roster for CSC-3280
-=======
 Course roster for CSC-3280
->>>>>>> 3ea50ed (Changing displayStats)
 	Kalyn Salido (ID # 111):
 		Exam 1:       90
 		Exam 2:       85
 		Final Exam:   94
 		Final Grade:  90.10
 		Letter Grade: A
-<<<<<<< HEAD
-Course Roster for CSC-2100
-=======
 Course roster for CSC-2100
->>>>>>> 3ea50ed (Changing displayStats)
 	Wesley Herrick (ID # 253):
 		Exam 1:       40
 		Exam 2:       80
@@ -186,16 +112,6 @@ Course roster for CSC-2100
 
 Command: ADDRECORD
    Student PlaysALot (ID# 584) has been added to CSC-2290.
-<<<<<<< HEAD
-   Final Grade: 26.20 (F).
-
-Command: ADDRECORD
-   Kalyn Salido (ID# 111) has been added to CSC-2100.
-   Final Grade: 87.10 (B).
-
-Command: DISPLAYSTUDENTS (CSC-2290)
-Course Roster for CSC-2290
-=======
    Final Grade: 26.20 (F)
 
 Command: ADDRECORD
@@ -204,7 +120,6 @@ Command: ADDRECORD
 
 Command: DISPLAYSTUDENTS (CSC-2290)
 Course roster for CSC-2290
->>>>>>> 3ea50ed (Changing displayStats)
 	Samuel Rogers (ID # 871):
 		Exam 1:       90
 		Exam 2:       70
@@ -220,42 +135,16 @@ Course roster for CSC-2290
 
 Command: DISPLAYSTATS (CSC-2290)
 Statistical Results of CSC-2290:
-<<<<<<< HEAD
-	Total number of student records: 6
-	Average Score: 17.83
-	Highest Score: 80.80
-	Lowest Score:  26.20
-	Total 'A' Grades:   0 (  0.00% of class)
-	Total 'B' Grades:   1 ( 16.67% of class)
-	Total 'C' Grades:   0 (  0.00% of class)
-	Total 'D' Grades:   0 (  0.00% of class)
-	Total 'F' Grades:   1 ( 16.67% of class)
-=======
 	Total number of student records: 1
 	Average Score: 17.83
 	Highest Score: 80.80
 	Lowest Score:   0.00
->>>>>>> 3ea50ed (Changing displayStats)
 
 Command: SEARCHBYID
 	ERROR: there is no record for student ID# 111.
 
 Command: ADDRECORD
    Stephan Bradford (ID# 289) has been added to CSC-3280.
-<<<<<<< HEAD
-   Final Grade: 66.40 (D).
-
-Command: ADDRECORD
-   Al Jifri (ID# 124) has been added to CSC-3280.
-   Final Grade: 95.80 (A).
-
-Command: ADDRECORD
-   Student WhoWorksHard (ID# 777) has been added to CSC-3280.
-   Final Grade: 100.00 (A).
-
-Command: DISPLAYSTUDENTS (CSC-3280)
-Course Roster for CSC-3280
-=======
    Final Grade: 66.40 (D)
 
 Command: ADDRECORD
@@ -268,7 +157,6 @@ Command: ADDRECORD
 
 Command: DISPLAYSTUDENTS (CSC-3280)
 Course roster for CSC-3280
->>>>>>> 3ea50ed (Changing displayStats)
 	Kalyn Salido (ID # 111):
 		Exam 1:       90
 		Exam 2:       85
@@ -296,42 +184,16 @@ Course roster for CSC-3280
 
 Command: DISPLAYSTATS (CSC-3280)
 Statistical Results of CSC-3280:
-<<<<<<< HEAD
-	Total number of student records: 9
-	Average Score: 39.14
-	Highest Score: 100.00
-	Lowest Score:  66.40
-	Total 'A' Grades:   3 ( 33.33% of class)
-	Total 'B' Grades:   0 (  0.00% of class)
-	Total 'C' Grades:   0 (  0.00% of class)
-	Total 'D' Grades:   1 ( 11.11% of class)
-	Total 'F' Grades:   0 (  0.00% of class)
-=======
 	Total number of student records: 3
 	Average Score: 39.14
 	Highest Score: 100.00
 	Lowest Score:   0.00
->>>>>>> 3ea50ed (Changing displayStats)
 
 Command: SEARCHBYNAME
 	ERROR: there is no record for student "Student WhoWorksHard".
 
 Command: DISPLAYSTATS (ALL)
 Statistical Results of CSC-2290:
-<<<<<<< HEAD
-	Total number of student records: 9
-	Average Score: 11.89
-	Highest Score: 80.80
-	Lowest Score:  26.20
-	Total 'A' Grades:   0 (  0.00% of class)
-	Total 'B' Grades:   1 ( 11.11% of class)
-	Total 'C' Grades:   0 (  0.00% of class)
-	Total 'D' Grades:   0 (  0.00% of class)
-	Total 'F' Grades:   1 ( 11.11% of class)
-
-Command: DISPLAYSTUDENTS (ALL)
-Course Roster for CSC-2290
-=======
 	Total number of student records: 1
 	Average Score: 11.89
 	Highest Score: 80.80
@@ -339,7 +201,6 @@ Course Roster for CSC-2290
 
 Command: DISPLAYSTUDENTS (ALL)
 Course roster for CSC-2290
->>>>>>> 3ea50ed (Changing displayStats)
 	Samuel Rogers (ID # 871):
 		Exam 1:       90
 		Exam 2:       70
@@ -352,11 +213,7 @@ Course roster for CSC-2290
 		Final Exam:   28
 		Final Grade:  26.20
 		Letter Grade: F
-<<<<<<< HEAD
-Course Roster for CSC-3280
-=======
 Course roster for CSC-3280
->>>>>>> 3ea50ed (Changing displayStats)
 	Kalyn Salido (ID # 111):
 		Exam 1:       90
 		Exam 2:       85
@@ -381,11 +238,7 @@ Course roster for CSC-3280
 		Final Exam:   100
 		Final Grade:  100.00
 		Letter Grade: A
-<<<<<<< HEAD
-Course Roster for CSC-2100
-=======
 Course roster for CSC-2100
->>>>>>> 3ea50ed (Changing displayStats)
 	Wesley Herrick (ID # 253):
 		Exam 1:       40
 		Exam 2:       80
@@ -405,20 +258,6 @@ Command: DELETERECORD
 
 Command: DISPLAYSTATS (ALL)
 Statistical Results of CSC-2290:
-<<<<<<< HEAD
-	Total number of student records: 9
-	Average Score: 11.89
-	Highest Score: 80.80
-	Lowest Score:  26.20
-	Total 'A' Grades:   0 (  0.00% of class)
-	Total 'B' Grades:   1 ( 11.11% of class)
-	Total 'C' Grades:   0 (  0.00% of class)
-	Total 'D' Grades:   0 (  0.00% of class)
-	Total 'F' Grades:   1 ( 11.11% of class)
-
-Command: DISPLAYSTUDENTS (ALL)
-Course Roster for CSC-2290
-=======
 	Total number of student records: 1
 	Average Score: 11.89
 	Highest Score: 80.80
@@ -426,7 +265,6 @@ Course Roster for CSC-2290
 
 Command: DISPLAYSTUDENTS (ALL)
 Course roster for CSC-2290
->>>>>>> 3ea50ed (Changing displayStats)
 	Samuel Rogers (ID # 871):
 		Exam 1:       90
 		Exam 2:       70
@@ -439,11 +277,7 @@ Course roster for CSC-2290
 		Final Exam:   28
 		Final Grade:  26.20
 		Letter Grade: F
-<<<<<<< HEAD
-Course Roster for CSC-3280
-=======
 Course roster for CSC-3280
->>>>>>> 3ea50ed (Changing displayStats)
 	Al Jifri (ID # 124):
 		Exam 1:       96
 		Exam 2:       98
@@ -462,11 +296,7 @@ Course roster for CSC-3280
 		Final Exam:   100
 		Final Grade:  100.00
 		Letter Grade: A
-<<<<<<< HEAD
-Course Roster for CSC-2100
-=======
 Course roster for CSC-2100
->>>>>>> 3ea50ed (Changing displayStats)
 	Wesley Herrick (ID # 253):
 		Exam 1:       40
 		Exam 2:       80
@@ -485,20 +315,6 @@ Command: SEARCHBYID
 
 Command: DISPLAYSTATS (ALL)
 Statistical Results of CSC-2290:
-<<<<<<< HEAD
-	Total number of student records: 9
-	Average Score: 11.89
-	Highest Score: 80.80
-	Lowest Score:  26.20
-	Total 'A' Grades:   0 (  0.00% of class)
-	Total 'B' Grades:   1 ( 11.11% of class)
-	Total 'C' Grades:   0 (  0.00% of class)
-	Total 'D' Grades:   0 (  0.00% of class)
-	Total 'F' Grades:   1 ( 11.11% of class)
-
-Command: DISPLAYSTUDENTS (ALL)
-Course Roster for CSC-2290
-=======
 	Total number of student records: 1
 	Average Score: 11.89
 	Highest Score: 80.80
@@ -506,7 +322,6 @@ Course Roster for CSC-2290
 
 Command: DISPLAYSTUDENTS (ALL)
 Course roster for CSC-2290
->>>>>>> 3ea50ed (Changing displayStats)
 	Samuel Rogers (ID # 871):
 		Exam 1:       90
 		Exam 2:       70
@@ -519,11 +334,7 @@ Course roster for CSC-2290
 		Final Exam:   28
 		Final Grade:  26.20
 		Letter Grade: F
-<<<<<<< HEAD
-Course Roster for CSC-3280
-=======
 Course roster for CSC-3280
->>>>>>> 3ea50ed (Changing displayStats)
 	Al Jifri (ID # 124):
 		Exam 1:       96
 		Exam 2:       98

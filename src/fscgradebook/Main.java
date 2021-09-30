@@ -163,7 +163,7 @@ public class Main {
             if (courses[i].searchID(ID)) {
                 out.println(courses[i].findNode(ID).toString());
             } else {
-                out.printf("	ERROR: there is no record for student ID# %d.\n", ID);
+                out.printf("\tERROR: there is no record for student ID# %d.\n", ID);
                 return;
             }
         }
