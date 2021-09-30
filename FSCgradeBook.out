@@ -27,8 +27,7 @@ Command: SEARCHBYNAME
 	ERROR: there is no record for student "Kalyn Salido".
 
 Command: ADDRECORD
-   Kalyn Salido (ID# 111) has been added to CSC-2207.
-   Final Grade: 90.10 (A).
+	ERROR: cannot add student. Course "CSC-2207" does not exist.
 
 Command: ADDRECORD
    Kalyn Salido (ID# 111) has been added to CSC-3280.
@@ -53,7 +52,7 @@ Statistical Results of CSC-3280:
 	Total 'F' Grades:   0 (  0.00% of class)
 
 Command: DISPLAYSTUDENTS (CSC-3280)
-Course roster for CSC-3280
+Course Roster for CSC-3280
 	Kalyn Salido (ID # 111):
 		Exam 1:       90
 		Exam 2:       85
@@ -62,7 +61,7 @@ Course roster for CSC-3280
 		Letter Grade: A
 
 Command: DISPLAYSTUDENTS (CSC-2100)
-Course roster for CSC-2100
+	ERROR: there are no student records for CSC-2100.
 
 Command: ADDRECORD
    Samuel Rogers (ID# 871) has been added to CSC-2290.
@@ -98,21 +97,21 @@ Command: SEARCHBYNAME
 	ERROR: there is no record for student "Wesley Herrick".
 
 Command: DISPLAYSTUDENTS (ALL)
-Course roster for CSC-2290
+Course Roster for CSC-2290
 	Samuel Rogers (ID # 871):
 		Exam 1:       90
 		Exam 2:       70
 		Final Exam:   82
 		Final Grade:  80.80
 		Letter Grade: B
-Course roster for CSC-3280
+Course Roster for CSC-3280
 	Kalyn Salido (ID # 111):
 		Exam 1:       90
 		Exam 2:       85
 		Final Exam:   94
 		Final Grade:  90.10
 		Letter Grade: A
-Course roster for CSC-2100
+Course Roster for CSC-2100
 	Wesley Herrick (ID # 253):
 		Exam 1:       40
 		Exam 2:       80
@@ -129,7 +128,7 @@ Command: ADDRECORD
    Final Grade: 87.10 (B).
 
 Command: DISPLAYSTUDENTS (CSC-2290)
-Course roster for CSC-2290
+Course Roster for CSC-2290
 	Samuel Rogers (ID # 871):
 		Exam 1:       90
 		Exam 2:       70
@@ -171,7 +170,7 @@ Command: ADDRECORD
    Final Grade: 100.00 (A).
 
 Command: DISPLAYSTUDENTS (CSC-3280)
-Course roster for CSC-3280
+Course Roster for CSC-3280
 	Kalyn Salido (ID # 111):
 		Exam 1:       90
 		Exam 2:       85
@@ -225,7 +224,7 @@ Statistical Results of CSC-2290:
 	Total 'F' Grades:   1 ( 11.11% of class)
 
 Command: DISPLAYSTUDENTS (ALL)
-Course roster for CSC-2290
+Course Roster for CSC-2290
 	Samuel Rogers (ID # 871):
 		Exam 1:       90
 		Exam 2:       70
@@ -238,7 +237,7 @@ Course roster for CSC-2290
 		Final Exam:   28
 		Final Grade:  26.20
 		Letter Grade: F
-Course roster for CSC-3280
+Course Roster for CSC-3280
 	Kalyn Salido (ID # 111):
 		Exam 1:       90
 		Exam 2:       85
@@ -263,7 +262,7 @@ Course roster for CSC-3280
 		Final Exam:   100
 		Final Grade:  100.00
 		Letter Grade: A
-Course roster for CSC-2100
+Course Roster for CSC-2100
 	Wesley Herrick (ID # 253):
 		Exam 1:       40
 		Exam 2:       80
@@ -294,7 +293,7 @@ Statistical Results of CSC-2290:
 	Total 'F' Grades:   1 ( 11.11% of class)
 
 Command: DISPLAYSTUDENTS (ALL)
-Course roster for CSC-2290
+Course Roster for CSC-2290
 	Samuel Rogers (ID # 871):
 		Exam 1:       90
 		Exam 2:       70
@@ -307,7 +306,7 @@ Course roster for CSC-2290
 		Final Exam:   28
 		Final Grade:  26.20
 		Letter Grade: F
-Course roster for CSC-3280
+Course Roster for CSC-3280
 	Al Jifri (ID # 124):
 		Exam 1:       96
 		Exam 2:       98
@@ -326,7 +325,7 @@ Course roster for CSC-3280
 		Final Exam:   100
 		Final Grade:  100.00
 		Letter Grade: A
-Course roster for CSC-2100
+Course Roster for CSC-2100
 	Wesley Herrick (ID # 253):
 		Exam 1:       40
 		Exam 2:       80
@@ -356,7 +355,7 @@ Statistical Results of CSC-2290:
 	Total 'F' Grades:   1 ( 11.11% of class)
 
 Command: DISPLAYSTUDENTS (ALL)
-Course roster for CSC-2290
+Course Roster for CSC-2290
 	Samuel Rogers (ID # 871):
 		Exam 1:       90
 		Exam 2:       70
@@ -369,7 +368,7 @@ Course roster for CSC-2290
 		Final Exam:   28
 		Final Grade:  26.20
 		Letter Grade: F
-Course roster for CSC-3280
+Course Roster for CSC-3280
 	Al Jifri (ID # 124):
 		Exam 1:       96
 		Exam 2:       98

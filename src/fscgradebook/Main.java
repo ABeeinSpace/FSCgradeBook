@@ -25,7 +25,7 @@ public class Main {
         if (!inputFile.exists()) {
             System.out.println("FATAL ERROR: The file " + inputFile + " cannot be read. Please ensure the file exists" +
                     " in the project directory. The program will now exit");
-            System.exit(-3); // A bit of trivia here. Driver number 4 in Formula 1 is McLaren driver Daniel Ricciardo.
+            System.exit(-3); // A bit of trivia here. Driver number 3 in Formula 1 is McLaren driver Daniel Ricciardo.
             // Nobody's going to see these exit codes, so I think I can have fun with them.
         }
 
@@ -49,8 +49,7 @@ public class Main {
 
 
         /*Main program execution loop.
-         * This loop will run until the QUIT command is read, at which point we're done here.
-         * We should start cleaning up after ourselves and prepare to exit.*/
+         * This loop will run until the QUIT command is read, at which point we're done here. */
         while (true) {
             out.println(); //This println call is just to make sure the output is properly spaced apart
             switch (in.next()) {
@@ -104,12 +103,17 @@ public class Main {
 
         Student newStudent = new Student(courseNumber, ID, firstName, lastName, examGrades, finalGrade,
                 letterGrade);
-
+        int courseIndex = -1;
         for (int i = 0; i < numCourses; i++) {
             if (courses[i].getCourseNumber().equals(courseNumber)) {
-                courses[i].insert(newStudent);
+                courseIndex = i;
             }
         }
+        if (courseIndex == -1) {
+            out.printf("\tERROR: cannot add student. Course \"%s\" does not exist.\n", courseNumber);
+            return;
+        }
+        courses[courseIndex].insert(newStudent);
         out.printf("   %s %s (ID# %d) has been added to %s.\n   Final Grade: %5.2f (%c).\n",
                 newStudent.getFirstName(),
                 newStudent.getLastName(), newStudent.getID(), newStudent.getCourseNumber(), newStudent.getFinalGrade(),
@@ -128,7 +132,7 @@ public class Main {
             return studentLetterGrade = 'B';
         } else if (finalGrade >= 70.0 && finalGrade <= 79.9) {
             return studentLetterGrade = 'C';
-        } else if (finalGrade >= 60.0 && finalGrade <= 69.9) { //nice
+        } else if (finalGrade >= 60.0 && finalGrade <= 69.9) { // nice
             return studentLetterGrade = 'D';
         } else if (finalGrade >= 0 && finalGrade <= 59.9) {
             return studentLetterGrade = 'F';
@@ -145,9 +149,9 @@ public class Main {
         for (int i = 0; i < numCourses; i++) {
             if (courses[i].searchID(studentID)) {
                 Student deletedBoi = courses[i].findNode(studentID);
+                courses[i].delete(studentID);
                 out.printf("\t%s %s (ID %d) has been deleted from %s\n", deletedBoi.getFirstName(),
                         deletedBoi.getLastName(), deletedBoi.getID(), deletedBoi.getCourseNumber());
-                courses[i].delete(studentID);
             }
         }
     }
@@ -210,7 +214,11 @@ public class Main {
         } else {
             for (int i = 0; i < numCourses; i++) {
                 if (courses[i].getCourseNumber().equals(courseNum)) {
-                    out.print(courses[i].toString());
+                    if (courses[i].isEmpty()) {
+                        out.printf("\tERROR: there are no student records for %s.\n",courseNum);
+                    } else {
+                        out.print(courses[i].toString());
+                    }
                 }
             }
         }

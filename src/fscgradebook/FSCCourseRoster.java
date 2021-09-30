@@ -32,7 +32,7 @@ public class FSCCourseRoster {
 
 	private boolean searchID(Student p ,int searchTerm) {
 		Student hp = p;
-		/*We loop while hp.getNext() does NOT equal null because if we tried to execute line 42 against a null value
+		/*We loop while hp does NOT equal null because if we tried to execute line 42 against a null value
 		Java would get angry at us and we would crash and burn.*/
 		while (hp != null) {
 			if (hp.getID() == searchTerm) {
@@ -49,7 +49,7 @@ public class FSCCourseRoster {
 
 	private boolean searchName(Student p, String firstName, String lastName) {
 		Student hp = p;
-		/*We loop while hp.getNext() does NOT equal null because if we tried to execute line 42 against a null value
+		/*We loop while hp does NOT equal null because if we tried to execute line 42 against a null value
 		Java would get angry at us and we would crash and burn.*/
 		while (hp != null) {
 			if (Objects.equals(hp.getFirstName(), firstName)) {
