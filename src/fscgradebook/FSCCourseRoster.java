@@ -196,7 +196,11 @@ public class FSCCourseRoster {
 			double sum = 0.0;
 			double average = 0.0;
 			double highest = 0.0;
-			double lowest = helpPtr.getFinalGrade();
+			double lowest = 0.0;
+			if (helpPtr != null) {
+				lowest = helpPtr.getFinalGrade();
+			}
+
 
 			while (helpPtr != null) {
 				if (helpPtr.getFinalGrade() > highest) {
