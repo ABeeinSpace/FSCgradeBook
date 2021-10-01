@@ -127,6 +127,8 @@ public class Student {
 		return output;
 	}
 
+	/*This method is a special toString for displayStudents since its output is slightly different from the other
+	things that I need a toString() for.*/
 	public String displayStudentsToString() {
 		String output = "";
 		output = output + String.format("\t%s %s (ID# %d):\n", firstName, lastName, ID);

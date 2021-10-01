@@ -1,7 +1,7 @@
 package fscgradebook;
 
-import java.io.PrintWriter;
-import java.util.Objects;
+import java.util.*;
+import java.io.*;
 
 public class FSCCourseRoster {
 	private Student head;
@@ -18,6 +18,8 @@ public class FSCCourseRoster {
 	public boolean isEmpty() {
 		return head == null;
 	}
+	/*Had to do some silliness here with the head so we could loop through the linked list outside of the
+	FSCCourseRoster class context.*/
 	public Student getHead() {
 		return head;
 	}
@@ -39,7 +41,9 @@ public class FSCCourseRoster {
 		Java would get angry at us and we would crash and burn.*/
 		while (hp != null) {
 			if (hp.getID() == searchTerm) {
-				/*We have to check the last name in case two students share a first name. */
+				/*We have to check the last name in case two students share a first name. For example, I know of at
+				least one other Aidan at FSC and I know of at least two Savannahs (one of them no longer goes to FSC
+				unfortunately).*/
 					return true;
 			}
 			hp = hp.getNext();
@@ -247,10 +251,10 @@ public class FSCCourseRoster {
 		}
 	}
 
-	// searchByID()
-	// Parameters: FSCStudent[] students, char searchTerm
+	// gradeCounter()
+	// Parameters: char searchTerm
 	// Returns: Integer
-	// Description: Iterates through the students[] array and returns the amount of a given letter grade that exists in the array.
+	// Description: Helper method for displayStats.
 	public int gradeCounter(char searchTerm) {
 		int gradeCounter = 0;
 		Student helpPtr = head;
@@ -269,6 +273,9 @@ public class FSCCourseRoster {
 		String output = "";
 		output += String.format("Course Roster for %s:\n", courseNumber);
 		Student helpPtr = head;
+
+		/* We utilize the displayStudentsToString() method from the Student class here so we dont duplicate a bunch
+		of code for no reason */
 		while (helpPtr != null) {
 			output += helpPtr.displayStudentsToString();
 			helpPtr = helpPtr.getNext();

@@ -10,7 +10,7 @@ import java.util.*;
 
 public class Main {
 
-    /* main()
+    /*  main()
      *  Parameters: String[] args
      *  Returns: Void
      *  Description: Method invoked by the Java runtime when we run the project or run Main.java directly.
@@ -87,6 +87,10 @@ public class Main {
     }
 
     //region addRecord and supporting methods
+    /*  addRecord()
+     *  Parameters: Scanner in, PrintWriter out, FSCCourseRoster[] courses, int numCourses
+     *  Returns: Void
+     *  Description: Adds a record to the relevant Linked List. */
     public static void addRecord(Scanner in, PrintWriter out, FSCCourseRoster[] courses, int numCourses) {
         out.println("Command: ADDRECORD");
         String courseNumber = in.next();
@@ -121,10 +125,18 @@ public class Main {
                 newStudent.getLetterGrade());
     }
 
+    /*  getFinalGrade()
+     *  Parameters: int[] examGrades
+     *  Returns: double
+     *  Description: Supporting method for addRecord(). Computes the final grade as a double and returns it. */
     public static double getFinalGrade(int[] examGrades) {
         return (examGrades[0] * 0.3) + (examGrades[1] * 0.3) + (examGrades[2] * 0.4);
     }
 
+    /*  getLetterGrade()
+     *  Parameters: double finalGrade
+     *  Returns: char
+     *  Description: Supporting method for addRecord(). Computes the earned letter grade and returns it. */
     public static char getLetterGrade(double finalGrade) {
         char studentLetterGrade = 'E';
         if (finalGrade >= 90.0) {
@@ -143,6 +155,10 @@ public class Main {
     }
     //endregion
 
+    /*  deleteRecord()
+     *  Parameters: Scanner in, PrintWriter out, FSCCourseRoster[] courses, int numCourses
+     *  Returns: void
+     *  Description: Deletes a record from the relevant Linked List */
     public static void deleteRecord(Scanner in, PrintWriter out, FSCCourseRoster[] courses, int numCourses) {
         out.println("Command: DELETERECORD");
         int studentID = in.nextInt();
@@ -158,6 +174,11 @@ public class Main {
         }
     }
 
+    /*  searchByID()
+     *  Parameters: FSCCourseRoster[] courses, int numCourses, Scanner in, PrintWriter out
+     *  Returns: void
+     *  Description: Searches the relevant Linked List for an ID. If it's found, print the information we have on the
+     *  student. If not, print an error. */
     public static void searchByID(FSCCourseRoster[] courses, int numCourses, Scanner in, PrintWriter out) {
         out.println("Command: SEARCHBYID");
         int ID = in.nextInt();
@@ -169,6 +190,11 @@ public class Main {
         }
         out.printf("\tERROR: there is no record for student ID# %d.\n", ID);
     }
+    /*  searchByName()
+     *  Parameters: FSCCourseRoster[] courses, int numCourses, Scanner in, PrintWriter out
+     *  Returns: void
+     *  Description: Searches the relevant Linked List for a student's name. If it's found, print the information we
+     * have on the student. If not, print an error. */
     public static void searchByName(FSCCourseRoster[] courses, int numCourses, Scanner in, PrintWriter out) {
         out.println("Command: SEARCHBYNAME");
         String firstName = in.next();
@@ -182,6 +208,10 @@ public class Main {
         out.printf("\tERROR: there is no record for student \"%s %s\".\n", firstName, lastName);
     }
 
+    /*  displayStats()
+     *  Parameters: FSCCourseRoster[] courses, int numCourses, Scanner in, PrintWriter out
+     *  Returns: void
+     *  Description: Displays statistics on a course or the gradebook as a whole. */
     public static void displayStats(FSCCourseRoster[] courses, int numCourses, Scanner in, PrintWriter out) {
         String courseToPrint = in.next();
         out.println("Command: DISPLAYSTATS ("+ courseToPrint + ")");
@@ -196,6 +226,11 @@ public class Main {
         }
     }
 
+    /*  displayStudents()
+     *  Parameters: FSCCourseRoster[] courses, int numCourses, Scanner in, PrintWriter out
+     *  Returns: void
+     *  Description: Searches the relevant Linked List for an ID. If it's found, print the information we have on the
+     *  student. If not, print an error. */
     public static void displayStudents(FSCCourseRoster[] courses, int numCourses, Scanner in, PrintWriter out) {
         String courseNum = in.next();
         out.println("Command: DISPLAYSTUDENTS ("+ courseNum + ")");
@@ -224,6 +259,10 @@ public class Main {
         }
     }
 
+    /*printAllStats()
+    * Parameters: FSCCourseRoster[] courses, PrintWriter out, int numCourses
+    * Returns: void
+    * Description: Helper method for displayStats*/
     public static void printAllStats(FSCCourseRoster[] courses, PrintWriter out, int numCourses) {
 //		// We need to traverse...so we need a help ptr
 //		Student helpPtr = head;
@@ -306,10 +345,10 @@ public class Main {
         }
     }
 
-    // searchByID()
-    // Parameters: FSCStudent[] students, char searchTerm
+    // gradeCounter()
+    // Parameters: char searchTerm, FSCStudent[] students, int numCourses
     // Returns: Integer
-    // Description: Iterates through the students[] array and returns the amount of a given letter grade that exists in the array.
+    // Description: Helper method for displayStats.
     public static int gradeCounter(char searchTerm, FSCCourseRoster[] courses, int numCourses) {
         int gradeCounter = 0;
         for (int i = 0; i < numCourses; i++) {
