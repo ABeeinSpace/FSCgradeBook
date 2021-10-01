@@ -18,7 +18,9 @@ public class FSCCourseRoster {
 	public boolean isEmpty() {
 		return head == null;
 	}
-
+	public Student getHead() {
+		return head;
+	}
 	public void setCourseNumber(String courseNumber) {
 		this.courseNumber = courseNumber;
 	}
@@ -99,11 +101,12 @@ public class FSCCourseRoster {
 
 	public void insert(Student newStudent) {
 		head = insert(head, newStudent);
+		numStudents++;
 	}
 
 	private Student insert(Student head, Student newStudent) {
 		// IF there is no list, newNode will be the first node, so just return it
-		if (head == null) {
+		if (head == null || head.getID() > newStudent.getID()) {
 			head = newStudent;
 			return head;
 		}
@@ -140,6 +143,7 @@ public class FSCCourseRoster {
 			// we found it. Delete by skipping the node and making head point to the next node.
 			if (head.getID() == ID) {
 				head = head.getNext();
+				numStudents--;
 			}
 			// ELSE, the data is perhaps somewhere else in the list...so we must traverse and look for it
 			else {
@@ -148,8 +152,8 @@ public class FSCCourseRoster {
 				// Traverse to correct deletion point
 				while (helpPtr.getNext() != null) {
 					if (helpPtr.getNext().getID() == ID) {
-
 						helpPtr.setNext(helpPtr.getNext().getNext());
+						numStudents--;
 						break; // we deleted the value and should break out of the while loop
 					}
 					helpPtr = helpPtr.getNext();
@@ -179,6 +183,7 @@ public class FSCCourseRoster {
 //		}
 //		return output;
 
+
 		if (Student.getNumStudents() == 0) {
 			out.println("Statistical Results for All Courses:");
 			out.printf("   Total number of student records: 0\n");
@@ -197,38 +202,36 @@ public class FSCCourseRoster {
 			double average = 0.0;
 			double highest = 0.0;
 			double lowest = 0.0;
-			if (helpPtr != null) {
-				lowest = helpPtr.getFinalGrade();
-			}
 
 
 			while (helpPtr != null) {
+				lowest = helpPtr.getFinalGrade();
 				if (helpPtr.getFinalGrade() > highest) {
 					highest = helpPtr.getFinalGrade();
-				} else if (helpPtr.getFinalGrade() < lowest && helpPtr.getFinalGrade() != 0) {
+				} else if (helpPtr.getFinalGrade() < lowest) {
 					lowest = helpPtr.getFinalGrade();
 				}
 				sum += helpPtr.getFinalGrade();
 				helpPtr = helpPtr.getNext();
 			}
-			average = sum / Student.getNumStudents();
+			average = (double) sum / (numStudents);
 
 			out.printf("Statistical Results of %s:\n", courseNumber);
-			out.printf("\tTotal number of student records: %d\n", numStudents);
+			out.printf("\tTotal number of student records: %d\n", numStudents - 1);
 			out.printf("\tAverage Score: %3.2f\n", average);
 			out.printf("\tHighest Score: %3.2f\n", highest);
 			out.printf("\tLowest Score:%7.2f\n", lowest);
 
 			out.printf("\tTotal 'A' Grades: %3d (%6.2f%% of class)\n", gradeCounter('A'),
-					(gradeCounter('A') / (double)Student.getNumStudents()) * 100);
+					(gradeCounter('A') / (double)(numStudents - 1)) * 100);
 			out.printf("\tTotal 'B' Grades: %3d (%6.2f%% of class)\n", gradeCounter('B'),
-					(gradeCounter('B') / (double)Student.getNumStudents()) * 100);
+					(gradeCounter('B') / (double)(numStudents - 1)) * 100);
 			out.printf("\tTotal 'C' Grades: %3d (%6.2f%% of class)\n", gradeCounter('C'),
-					(gradeCounter('C') / (double)Student.getNumStudents()) * 100);
+					(gradeCounter('C') / (double)(numStudents - 1)) * 100);
 			out.printf("\tTotal 'D' Grades: %3d (%6.2f%% of class)\n", gradeCounter('D'),
-					(gradeCounter('D') / (double)Student.getNumStudents()) * 100);
+					(gradeCounter('D') / (double)(numStudents - 1)) * 100);
 			out.printf("\tTotal 'F' Grades: %3d (%6.2f%% of class)\n", gradeCounter('F'),
-					(gradeCounter('F') / (double)Student.getNumStudents()) * 100);
+					(gradeCounter('F') / (double)(numStudents - 1)) * 100);
 
 		}
 	}
@@ -253,13 +256,10 @@ public class FSCCourseRoster {
 	@Override
 	public String toString() {
 		String output = "";
-		output += String.format("Course Roster for %s\n", courseNumber);
-		if (isEmpty()) {
-
-		}
+		output += String.format("Course Roster for %s:\n", courseNumber);
 		Student helpPtr = head;
 		while (helpPtr != null) {
-			output += helpPtr.toString();
+			output += helpPtr.displayStudentsToString();
 			helpPtr = helpPtr.getNext();
 		}
 		return output;

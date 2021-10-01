@@ -103,17 +103,18 @@ public class Main {
 
         Student newStudent = new Student(courseNumber, ID, firstName, lastName, examGrades, finalGrade,
                 letterGrade);
-        int courseIndex = -1;
         for (int i = 0; i < numCourses; i++) {
             if (courses[i].getCourseNumber().equals(courseNumber)) {
-                courseIndex = i;
+                courses[i].insert(newStudent);
+                break;
+            } else {
+                if (i == courses.length - 1) {
+                    out.printf("\tERROR: cannot add student. Course \"%s\" does not exist.\n", courseNumber);
+                    return;
+                }
             }
         }
-        if (courseIndex == -1) {
-            out.printf("\tERROR: cannot add student. Course \"%s\" does not exist.\n", courseNumber);
-            return;
-        }
-        courses[courseIndex].insert(newStudent);
+
         out.printf("   %s %s (ID# %d) has been added to %s.\n   Final Grade: %5.2f (%c).\n",
                 newStudent.getFirstName(),
                 newStudent.getLastName(), newStudent.getID(), newStudent.getCourseNumber(), newStudent.getFinalGrade(),
@@ -150,8 +151,9 @@ public class Main {
             if (courses[i].searchID(studentID)) {
                 Student deletedBoi = courses[i].findNode(studentID);
                 courses[i].delete(studentID);
-                out.printf("\t%s %s (ID %d) has been deleted from %s\n", deletedBoi.getFirstName(),
+                out.printf("\t%s %s (ID# %d) has been deleted from %s.\n", deletedBoi.getFirstName(),
                         deletedBoi.getLastName(), deletedBoi.getID(), deletedBoi.getCourseNumber());
+                Student.decrementNumStudents();
             }
         }
     }
@@ -162,11 +164,10 @@ public class Main {
         for (int i = 0; i < numCourses; i++) {
             if (courses[i].searchID(ID)) {
                 out.println(courses[i].findNode(ID).toString());
-            } else {
-                out.printf("\tERROR: there is no record for student ID# %d.\n", ID);
                 return;
             }
         }
+        out.printf("\tERROR: there is no record for student ID# %d.\n", ID);
     }
     public static void searchByName(FSCCourseRoster[] courses, int numCourses, Scanner in, PrintWriter out) {
         out.println("Command: SEARCHBYNAME");
@@ -175,18 +176,17 @@ public class Main {
         for (int i = 0; i < numCourses; i++) {
             if (courses[i].searchName(firstName, lastName)) {
                 out.println(courses[i].findNode(firstName, lastName).toString());
-            } else {
-                out.printf("	ERROR: there is no record for student \"%s %s\".\n", firstName, lastName);
                 return;
             }
         }
+        out.printf("\tERROR: there is no record for student \"%s %s\".\n", firstName, lastName);
     }
 
     public static void displayStats(FSCCourseRoster[] courses, int numCourses, Scanner in, PrintWriter out) {
         String courseToPrint = in.next();
         out.println("Command: DISPLAYSTATS ("+ courseToPrint + ")");
         if (courseToPrint.equals("ALL")) {
-            courses[0].printStats(out); //TODO: Fix this fuckery
+            printAllStats(courses, out, numCourses); //TODO: Fix this fuckery
         } else {
             for (int i = 0; i < numCourses; i++) {
                 if (courses[i].getCourseNumber().equals(courseToPrint)) {
@@ -222,5 +222,95 @@ public class Main {
                 }
             }
         }
+    }
+
+    public static void printAllStats(FSCCourseRoster[] courses, PrintWriter out, int numCourses) {
+//		// We need to traverse...so we need a help ptr
+//		Student helpPtr = head;
+//		// Traverse to correct insertion point
+//		String output = "";
+//		while (helpPtr != null) {
+//			// Print the data value of the node
+//			output += helpPtr.toString();
+//			// Step one node over
+//			helpPtr = helpPtr.getNext();
+//		}
+//		return output;
+
+        if (Student.getNumStudents() == 0) {
+            out.println("Statistical Results for All Courses:");
+            out.printf("   Total number of student records: 0\n");
+            out.printf("   Average Score: 0.00\n");
+            out.printf("   Highest Score: 0.00\n");
+            out.printf("   Lowest Score:  0.00\n");
+
+            out.printf("   Total 'A' Grades: 0  (0.00%% of class)\n");
+            out.printf("   Total 'B' Grades: 0  (0.00%% of class)\n");
+            out.printf("   Total 'C' Grades: 0  (0.00%% of class)\n");
+            out.printf("   Total 'D' Grades: 0  (0.00%% of class)\n");
+            out.printf("   Total 'F' Grades: 0  (0.00%% of class)\n");
+        } else {
+        double sum = 0.0;
+        double average = 0.0;
+        double highest = 0.0;
+        double lowest = 0.0;
+
+        for (int i = 0; i < numCourses; i++) {
+            Student helpPtr = courses[i].getHead();
+            if (courses[i].isEmpty()) {
+                continue;
+            } else {
+                while (helpPtr != null) {
+                    lowest = helpPtr.getFinalGrade();
+                    if (helpPtr.getFinalGrade() > highest) {
+                        highest = helpPtr.getFinalGrade();
+                    } else if (helpPtr.getFinalGrade() < lowest) {
+                        lowest = helpPtr.getFinalGrade();
+                    }
+                    sum = sum + helpPtr.getFinalGrade();
+                    helpPtr = helpPtr.getNext();
+                }
+            }
+        }
+
+        average = sum / (double)(Student.getNumStudents());
+
+        out.printf("Statistical Results for All Courses:\n");
+        out.printf("\tTotal number of student records: %d\n", Student.getNumStudents() - 1);
+        out.printf("\tAverage Score: %3.2f\n", average);
+        out.printf("\tHighest Score: %3.2f\n", highest);
+        out.printf("\tLowest Score:%7.2f\n", lowest);
+
+        out.printf("\tTotal 'A' Grades: %3d (%6.2f%% of class)\n", gradeCounter('A', courses, numCourses),
+                (gradeCounter('A', courses, numCourses) / (double)(Student.getNumStudents() - 1)) * 100);
+        out.printf("\tTotal 'B' Grades: %3d (%6.2f%% of class)\n", gradeCounter('B', courses, numCourses),
+                (gradeCounter('B', courses, numCourses) / (double)(Student.getNumStudents() - 1)) * 100);
+        out.printf("\tTotal 'C' Grades: %3d (%6.2f%% of class)\n", gradeCounter('C', courses, numCourses),
+                (gradeCounter('C', courses, numCourses) / (double)(Student.getNumStudents() - 1)) * 100);
+        out.printf("\tTotal 'D' Grades: %3d (%6.2f%% of class)\n", gradeCounter('D', courses, numCourses),
+                (gradeCounter('D', courses, numCourses) / (double)(Student.getNumStudents() - 1)) * 100);
+        out.printf("\tTotal 'F' Grades: %3d (%6.2f%% of class)\n", gradeCounter('F', courses, numCourses),
+                (gradeCounter('F', courses, numCourses) / (double)(Student.getNumStudents() - 1)) * 100);
+
+        }
+    }
+
+    // searchByID()
+    // Parameters: FSCStudent[] students, char searchTerm
+    // Returns: Integer
+    // Description: Iterates through the students[] array and returns the amount of a given letter grade that exists in the array.
+    public static int gradeCounter(char searchTerm, FSCCourseRoster[] courses, int numCourses) {
+        int gradeCounter = 0;
+        for (int i = 0; i < numCourses; i++) {
+            Student helpPtr = courses[i].getHead();
+            while (helpPtr != null) {
+                if (helpPtr.getLetterGrade() == searchTerm && helpPtr.getFinalGrade() != 0) {
+                    gradeCounter++;
+                }
+                helpPtr = helpPtr.getNext();
+            }
+        }
+
+        return gradeCounter;
     }
 }
