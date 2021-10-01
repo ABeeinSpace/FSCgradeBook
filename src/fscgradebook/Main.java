@@ -43,7 +43,7 @@ public class Main {
         for (int i = 0; i < numCourses; i++) {
             courses[i] = new FSCCourseRoster();
             courses[i].setCourseNumber(in.next());
-            out.printf("\t %s\n", courses[i].getCourseNumber());
+            out.printf("\t%s\n", courses[i].getCourseNumber());
         }
 
 
@@ -280,17 +280,28 @@ public class Main {
         out.printf("\tAverage Score: %3.2f\n", average);
         out.printf("\tHighest Score: %3.2f\n", highest);
         out.printf("\tLowest Score:%7.2f\n", lowest);
-
-        out.printf("\tTotal 'A' Grades: %3d (%6.2f%% of class)\n", gradeCounter('A', courses, numCourses),
-                (gradeCounter('A', courses, numCourses) / (double)(Student.getNumStudents() - 1)) * 100);
-        out.printf("\tTotal 'B' Grades: %3d (%6.2f%% of class)\n", gradeCounter('B', courses, numCourses),
-                (gradeCounter('B', courses, numCourses) / (double)(Student.getNumStudents() - 1)) * 100);
-        out.printf("\tTotal 'C' Grades: %3d (%6.2f%% of class)\n", gradeCounter('C', courses, numCourses),
-                (gradeCounter('C', courses, numCourses) / (double)(Student.getNumStudents() - 1)) * 100);
-        out.printf("\tTotal 'D' Grades: %3d (%6.2f%% of class)\n", gradeCounter('D', courses, numCourses),
-                (gradeCounter('D', courses, numCourses) / (double)(Student.getNumStudents() - 1)) * 100);
-        out.printf("\tTotal 'F' Grades: %3d (%6.2f%% of class)\n", gradeCounter('F', courses, numCourses),
-                (gradeCounter('F', courses, numCourses) / (double)(Student.getNumStudents() - 1)) * 100);
+        if (Student.getNumStudents() == 0) {
+            out.printf("\tTotal 'A' Grades: %1d (%6.2f%% of class)\n", gradeCounter('A', courses, numCourses),
+                    (gradeCounter('A', courses, numCourses) / (double)(Student.getNumStudents())) * 100);
+            out.printf("\tTotal 'B' Grades: %1d (%6.2f%% of class)\n", gradeCounter('B', courses, numCourses),
+                    (gradeCounter('B', courses, numCourses) / (double)(Student.getNumStudents())) * 100);
+            out.printf("\tTotal 'C' Grades: %1d (%6.2f%% of class)\n", gradeCounter('C', courses, numCourses),
+                    (gradeCounter('C', courses, numCourses) / (double)(Student.getNumStudents())) * 100);
+            out.printf("\tTotal 'D' Grades: %1d (%6.2f%% of class)\n", gradeCounter('D', courses, numCourses),
+                    (gradeCounter('D', courses, numCourses) / (double)(Student.getNumStudents())) * 100);
+            out.printf("\tTotal 'F' Grades: %1d (%6.2f%% of class)\n", gradeCounter('F', courses, numCourses),
+                    (gradeCounter('F', courses, numCourses) / (double)(Student.getNumStudents())) * 100);
+        }
+        out.printf("\tTotal 'A' Grades: %1d (%.2f%% of class)\n", gradeCounter('A', courses, numCourses),
+                (gradeCounter('A', courses, numCourses) / (double)(Student.getNumStudents())) * 100);
+        out.printf("\tTotal 'B' Grades: %1d (%.2f%% of class)\n", gradeCounter('B', courses, numCourses),
+                (gradeCounter('B', courses, numCourses) / (double)(Student.getNumStudents())) * 100);
+        out.printf("\tTotal 'C' Grades: %1d (%.2f%% of class)\n", gradeCounter('C', courses, numCourses),
+                (gradeCounter('C', courses, numCourses) / (double)(Student.getNumStudents())) * 100);
+        out.printf("\tTotal 'D' Grades: %1d (%.2f%% of class)\n", gradeCounter('D', courses, numCourses),
+                (gradeCounter('D', courses, numCourses) / (double)(Student.getNumStudents())) * 100);
+        out.printf("\tTotal 'F' Grades: %1d (%.2f%% of class)\n", gradeCounter('F', courses, numCourses),
+                (gradeCounter('F', courses, numCourses) / (double)(Student.getNumStudents())) * 100);
 
         }
     }

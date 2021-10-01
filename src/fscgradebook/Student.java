@@ -129,12 +129,12 @@ public class Student {
 
 	public String displayStudentsToString() {
 		String output = "";
-		output = output + String.format("%s %s (ID# %d):\n", firstName, lastName, ID);
-		output = output + String.format("\tExam 1:      % 2d\n", (int)examGrades[0]);
-		output = output + String.format("\tExam 2:      % 2d\n", (int)examGrades[1]);
-		output = output + String.format("\tFinal Exam:  % 2d\n", (int)examGrades[2]);
-		output = output + String.format("\tFinal Grade:  %3.2f\n", finalGrade);
-		output = output + String.format("\tLetter Grade:%2c\n", letterGrade);
+		output = output + String.format("\t%s %s (ID# %d):\n", firstName, lastName, ID);
+		output = output + String.format("\t\tExam 1:      % 2d\n", (int)examGrades[0]);
+		output = output + String.format("\t\tExam 2:      % 2d\n", (int)examGrades[1]);
+		output = output + String.format("\t\tFinal Exam:  % 2d\n", (int)examGrades[2]);
+		output = output + String.format("\t\tFinal Grade:  %3.2f\n", finalGrade);
+		output = output + String.format("\t\tLetter Grade:%2c\n", letterGrade);
 
 		return output;
 	}

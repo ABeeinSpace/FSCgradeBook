@@ -221,16 +221,27 @@ public class FSCCourseRoster {
 			out.printf("\tAverage Score: %3.2f\n", average);
 			out.printf("\tHighest Score: %3.2f\n", highest);
 			out.printf("\tLowest Score:%7.2f\n", lowest);
-
-			out.printf("\tTotal 'A' Grades: %3d (%6.2f%% of class)\n", gradeCounter('A'),
+			if (numStudents == 0) {
+				out.printf("\tTotal 'A' Grades: %1d (%.2f%% of class)\n", gradeCounter('A'),
+						(gradeCounter('A') / (double)(numStudents)) * 100);
+				out.printf("\tTotal 'B' Grades: %1d (%.2f%% of class)\n", gradeCounter('B'),
+						(gradeCounter('B') / (double)(numStudents)) * 100);
+				out.printf("\tTotal 'C' Grades: %1d (%.2f%% of class)\n", gradeCounter('C'),
+						(gradeCounter('C') / (double)(numStudents)) * 100);
+				out.printf("\tTotal 'D' Grades: %1d (%.2f%% of class)\n", gradeCounter('D'),
+						(gradeCounter('D') / (double)(numStudents)) * 100);
+				out.printf("\tTotal 'F' Grades: %1d (%.2f%% of class)\n", gradeCounter('F'),
+						(gradeCounter('F') / (double)(numStudents)) * 100);
+			}
+			out.printf("\tTotal 'A' Grades: %1d (%.2f%% of class)\n", gradeCounter('A'),
 					(gradeCounter('A') / (double)(numStudents - 1)) * 100);
-			out.printf("\tTotal 'B' Grades: %3d (%6.2f%% of class)\n", gradeCounter('B'),
+			out.printf("\tTotal 'B' Grades: %1d (%.2f%% of class)\n", gradeCounter('B'),
 					(gradeCounter('B') / (double)(numStudents - 1)) * 100);
-			out.printf("\tTotal 'C' Grades: %3d (%6.2f%% of class)\n", gradeCounter('C'),
+			out.printf("\tTotal 'C' Grades: %1d (%.2f%% of class)\n", gradeCounter('C'),
 					(gradeCounter('C') / (double)(numStudents - 1)) * 100);
-			out.printf("\tTotal 'D' Grades: %3d (%6.2f%% of class)\n", gradeCounter('D'),
+			out.printf("\tTotal 'D' Grades: %1d (%.2f%% of class)\n", gradeCounter('D'),
 					(gradeCounter('D') / (double)(numStudents - 1)) * 100);
-			out.printf("\tTotal 'F' Grades: %3d (%6.2f%% of class)\n", gradeCounter('F'),
+			out.printf("\tTotal 'F' Grades: %1d (%.2f%% of class)\n", gradeCounter('F'),
 					(gradeCounter('F') / (double)(numStudents - 1)) * 100);
 
 		}
